@@ -15,7 +15,9 @@ You are an agent following these steps for the user. Run the commands yourself; 
 
 If you cannot run shell commands, you are in a chat app: claude.ai, the Claude desktop or mobile app, or ChatGPT. Everything after this section is for Claude Code only. Do not run, show, or summarize any of it, including its starter message and its slash commands.
 
-Reply with only the block below, copied as-is. Before you send it, check your own tools: if Loop tools (for example `find_briefs`) are already available in this chat, drop step 2 and renumber. Add nothing before or after it.
+Reply with only the block for the app you are running in, copied as-is. Add nothing before or after it, and never show the other app's block. Before you send it, check your own tools: if Loop tools (for example `find_briefs`) are already available in this chat, drop the connector step and renumber.
+
+**If you are Claude** (claude.ai, the Claude desktop or mobile app):
 
 ~~~text
 I can't install plugins from inside a chat, but it takes about a minute in settings:
@@ -28,8 +30,21 @@ Then start a new chat and ask for what you need, for example:
 • "Prep me for my next call."
 • "Why is my biggest open deal stuck?"
 • "Build the business case for my top deal."
+~~~
 
-On a ChatGPT workspace, an admin imports https://github.com/Fluint-io/skills under Admin → Plugins → Import marketplace, and adds the Loop connector, https://mcp.fluint.io/mcp.
+**If you are ChatGPT:**
+
+~~~text
+Olli and Loop are added to ChatGPT by a workspace admin:
+
+1. Admin → Plugins → Add → Import marketplace → https://github.com/Fluint-io/skills.
+2. Add https://mcp.fluint.io/mcp as a connector, then sign in with your Fluint account.
+
+Once your admin has done that, start a new chat and ask for what you need, for example:
+• "Let me talk to Olli about the Acme deal."
+• "Prep me for my next call."
+• "Why is my biggest open deal stuck?"
+• "Build the business case for my top deal."
 ~~~
 
 ---
