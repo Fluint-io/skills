@@ -46,39 +46,13 @@ Every skill carries a `loop-` prefix, so they group together in the slash-comman
 
 ## Install
 
-This is one plugin containing all the skills. Install it once and you get the whole toolbox, and each skill still triggers on its own when the moment fits. It runs on both Claude and ChatGPT.
+Paste this into Claude Code (or Codex):
 
-### Claude (Pro, Max, Team, or Enterprise)
+```
+Install and set up Uncommon Sales Skills and the Loop MCP by following https://raw.githubusercontent.com/Fluint-io/uncommon-sales-skills/main/INSTALL.md
+```
 
-1. Open **Customize → Plugins** (or **Settings → Capabilities → Plugins**).
-2. **Add marketplace** and paste this repository:
-   ```
-   nnasrall/uncommon-sales-skills
-   ```
-3. Install the **Uncommon Sales Skills** plugin. Turn on **Sync automatically** and it updates itself when the repo changes.
-
-### ChatGPT / Codex (workspace admin)
-
-1. In **Admin → Plugins**, choose **Add → Import marketplace**.
-2. Enter the repository URL as the source:
-   ```
-   https://github.com/nnasrall/uncommon-sales-skills
-   ```
-3. Authorize GitHub access and set the install policy. New marketplaces sync automatically.
-
-The repo ships both a Claude manifest (`.claude-plugin/`) and a Codex manifest (`.codex-plugin/`) over one shared `skills/` folder, so a single source powers both platforms.
-
-### Connect Loop (recommended)
-
-The skills read your deals through **Loop**, Fluint's MCP server. It is optional, but it is what lets a skill start from your real deal instead of what you paste in.
-
-1. Add a custom connector (in Claude: **Settings → Connectors → Add custom connector**) with the URL:
-   ```
-   https://mcp.fluint.io/mcp
-   ```
-2. Sign in with your Fluint account. Loop only ever shows you your own organization's briefs.
-
-Loop is read-only. It exposes `find_briefs`, `get_brief`, and `get_record`, plus `search` and `fetch` for ChatGPT-style clients.
+That installs all eleven `/loop-*` skills and connects Loop, Fluint's MCP (`https://mcp.fluint.io/mcp`). The only step left to you is signing in to Fluint in the browser. Using the Claude app or a ChatGPT workspace instead? [INSTALL.md](INSTALL.md) has the click-through steps.
 
 ### Renamed skills
 
