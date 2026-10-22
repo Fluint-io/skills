@@ -13,13 +13,15 @@ You are an agent following these steps for the user. Run the commands yourself; 
 
 ## 1. Find the host
 
-Run alone:
+**No shell? You are in a chat app** (claude.ai, the Claude desktop or mobile app, ChatGPT). Do not try to run commands, and do not show the user the terminal steps below. Go straight to "In a chat app" at the end, follow only that section, and stop.
+
+Otherwise, run alone:
 
 ~~~bash
 claude --version
 ~~~
 
-If it prints a version, you are in Claude Code: do steps 2 and 3. If not, skip to "Other hosts".
+If it prints a version, you are in Claude Code: do steps 2 to 4. If not, go to "In a chat app".
 
 ## 2. Install the plugins (Claude Code)
 
@@ -74,18 +76,6 @@ Loop signs in with OAuth in a browser, which you cannot do. Tell the user: run `
 
 Loop is required. It is the only data source Olli and the plays use, and they stop if it is not connected. If the user has no Fluint account, tell them they need one first.
 
-## Other hosts
-
-You cannot install these yourself. Give the user these steps verbatim.
-
-**Claude app (claude.ai, desktop):**
-1. Customize → Plugins → Add marketplace → `Fluint-io/skills`. Install both **olli** and **loop**, and turn on **Sync automatically**.
-2. Settings → Connectors → Add custom connector → `https://mcp.fluint.io/mcp`, then sign in with Fluint.
-
-**ChatGPT / Codex (workspace admin):**
-1. Admin → Plugins → Add → Import marketplace → `https://github.com/Fluint-io/skills`.
-2. Add `https://mcp.fluint.io/mcp` as a connector and sign in with Fluint.
-
 ## 4. Getting started
 
 New skills load in a new session. Tell the user to start one (or restart Claude Code), then put this in your final reply, copied as-is:
@@ -101,4 +91,23 @@ Try one:
 5. /loop:business-case Build the business case for my top deal.
 
 Or just describe the deal in your own words. The right play picks itself.
+~~~
+
+## In a chat app
+
+Reply with only the block below, copied as-is. Before you send it, check your own tools: if Loop tools (for example `find_briefs`) are already available in this chat, drop step 2.
+
+~~~text
+I can't install plugins from inside a chat, but it takes about a minute in settings:
+
+1. Customize → Plugins → Add marketplace → Fluint-io/skills. Install both "olli" and "loop", and turn on Sync automatically.
+2. Settings → Connectors → Add custom connector → https://mcp.fluint.io/mcp, then sign in with your Fluint account.
+
+Then start a new chat and ask for what you need, for example:
+• "Talk me through the Acme deal like Olli would."
+• "Prep me for my next call."
+• "Why is my biggest open deal stuck?"
+• "Build the business case for my top deal."
+
+On a ChatGPT workspace, an admin imports https://github.com/Fluint-io/skills under Admin → Plugins → Import marketplace, and adds the same connector.
 ~~~
