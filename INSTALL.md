@@ -178,6 +178,15 @@ Or just describe the deal in your own words. The right play picks itself.
 
 Grok Build reads Claude Code marketplaces, plugins, and MCP servers. If the user already set up Olli and Loop in Claude Code on this machine, they may already be available: check Grok's Marketplace tab before installing anything.
 
+If the old `olli` or `loop` plugins (from before 1.3.0) are installed, remove them first, in Grok Build and in Claude Code, since Grok reads both. Each command may report that nothing is installed:
+
+~~~bash
+grok plugin uninstall olli@fluint
+grok plugin uninstall loop@fluint
+claude plugin uninstall olli@fluint
+claude plugin uninstall loop@fluint
+~~~
+
 Otherwise add the marketplace and install the plugin:
 
 ~~~bash

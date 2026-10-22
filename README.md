@@ -86,7 +86,7 @@ Loop customers running complex, multi-stakeholder, mid-market and enterprise dea
 
 ## Upgrading from an earlier version
 
-It is now one plugin, `fluint`: `/fluint:olli` for Olli and `/fluint:...` for the plays. Reinstall it once (the install line above handles this), then:
+It is now one plugin, `fluint`: `/fluint:olli` for Olli and `/fluint:...` for the plays. Installing `fluint` does not remove the old `olli` and `loop` plugins, so `/olli:chat` and `/loop:...` would stay alongside the new commands. The install line above removes them for you; if you install by hand, run `claude plugin uninstall olli@fluint` and `claude plugin uninstall loop@fluint` first. Then:
 
 | Was (1.0) | Was (1.1) | Now |
 |-----|-----|-----|
