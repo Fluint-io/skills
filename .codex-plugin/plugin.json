@@ -1,6 +1,6 @@
 {
-  "name": "uncommon-sales-skills",
-  "version": "1.1.1+codex.20261022164638",
+  "name": "loop",
+  "version": "1.2.0+codex.20261022165329",
   "description": "Ten sales-play skills that run enterprise deals the way top reps sell: in the buyer's own language, sourced from your live deal data, ending in a forwardable asset. Built on the Selling With and Brief & Brilliant frameworks.",
   "author": {
     "name": "Fluint.io",
@@ -21,7 +21,7 @@
     "forecast",
     "fluint"
   ],
-  "skills": "./skills/",
+  "skills": "./plugins/loop/skills/",
   "interface": {
     "displayName": "Uncommon Sales Skills",
     "shortDescription": "Run enterprise sales plays in the buyer's own language",

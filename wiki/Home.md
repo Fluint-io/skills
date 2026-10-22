@@ -16,13 +16,13 @@ Built by [Nate Nasralla](https://www.fluint.io), author of *Selling With* and *B
 
 | Stage | Skills |
 |-------|--------|
-| Prospecting and account entry | `loop-multithread`, `loop-account-plan` |
-| Discovery | `loop-call-prep`, `loop-follow-up` |
-| Building consensus | `loop-champion` |
-| Demo and evaluation | `loop-displace` |
-| Business case and mid-funnel | `loop-business-case`, `loop-advance` |
-| Account management | `loop-qbr` |
-| Managing up | `loop-manage-up` |
+| Prospecting and account entry | `loop:multithread`, `loop:account-plan` |
+| Discovery | `loop:call-prep`, `loop:follow-up` |
+| Building consensus | `loop:champion` |
+| Demo and evaluation | `loop:displace` |
+| Business case and mid-funnel | `loop:business-case`, `loop:advance` |
+| Account management | `loop:qbr` |
+| Managing up | `loop:manage-up` |
 
 ## What makes them different
 

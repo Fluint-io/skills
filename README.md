@@ -18,13 +18,20 @@ Paste this into Claude Code or Codex:
 Install and set up Uncommon Sales Skills and the Loop MCP by following https://raw.githubusercontent.com/Fluint-io/uncommon-sales-skills/main/INSTALL.md
 ```
 
-It adds Olli and the plays, and connects your Loop account. The only thing left to you is signing in to Fluint. Using the Claude app or ChatGPT instead? [INSTALL.md](INSTALL.md) has the click-through steps.
+It adds two plugins, **olli** (`/olli:chat`) and **loop** (the plays, `/loop:...`), and connects your Loop account. Prefer to install the plugins yourself? In Claude Code:
+
+```
+/plugin install olli --marketplace Fluint-io/uncommon-sales-skills
+/plugin install loop --marketplace Fluint-io/uncommon-sales-skills
+```
+
+The paste-in line above also connects Loop for you. The only thing left to you is signing in to Fluint. Using the Claude app or ChatGPT instead? [INSTALL.md](INSTALL.md) has the click-through steps.
 
 ---
 
 ## Talk to Olli
 
-Type `/olli` and the conversation becomes Olli: brief, calm, strategic, and written the way your buyers talk. Olli stays on until you say "exit Olli".
+Type `/olli:chat` and the conversation becomes Olli: brief, calm, strategic, and written the way your buyers talk. Olli stays on until you say "exit Olli".
 
 - *"What's going on with the Globex renewal?"*
 - *"Who have we actually talked to at Initech?"*
@@ -41,17 +48,17 @@ Each play is one moment in a deal, built on a framework from *Selling With* and 
 
 | Play | What you walk away with |
 |------|-------------------------|
-| **/loop-plays** | Not sure what you need? Describe the deal and it points you to the right play. |
-| **/loop-call-prep** | A one-screen meeting brief: a point of view, planned discovery, the opening, and the ask. |
-| **/loop-follow-up** | A stakeholder map, the problem in the buyer's words, and a forwardable follow-up for each person on the call. |
-| **/loop-multithread** | The real buying committee, a value hypothesis for each person, and the outreach to reach them. |
-| **/loop-account-plan** | A point of view, the opportunities ranked by executive priority, and the first message to send. |
-| **/loop-champion** | The kit your champion carries into the meetings you are not in: soundbite, objection reframes, a one-pager. |
-| **/loop-displace** | A plan to unseat the incumbent by changing the criteria, not by winning a feature war. |
-| **/loop-business-case** | A one-page business case in the customer's words, scored, with the next move to strengthen it. |
-| **/loop-advance** | Why the deal stalled and the moves to restart it, or a mutual action plan to close it. |
-| **/loop-qbr** | A QBR that leads with their success, gets ahead of risk, and opens expansion without a pitch. |
-| **/loop-manage-up** | A forecast-call pack: an honest read of the territory, your big bets, and specific asks of leadership. |
+| **/loop:plays** | Not sure what you need? Describe the deal and it points you to the right play. |
+| **/loop:call-prep** | A one-screen meeting brief: a point of view, planned discovery, the opening, and the ask. |
+| **/loop:follow-up** | A stakeholder map, the problem in the buyer's words, and a forwardable follow-up for each person on the call. |
+| **/loop:multithread** | The real buying committee, a value hypothesis for each person, and the outreach to reach them. |
+| **/loop:account-plan** | A point of view, the opportunities ranked by executive priority, and the first message to send. |
+| **/loop:champion** | The kit your champion carries into the meetings you are not in: soundbite, objection reframes, a one-pager. |
+| **/loop:displace** | A plan to unseat the incumbent by changing the criteria, not by winning a feature war. |
+| **/loop:business-case** | A one-page business case in the customer's words, scored, with the next move to strengthen it. |
+| **/loop:advance** | Why the deal stalled and the moves to restart it, or a mutual action plan to close it. |
+| **/loop:qbr** | A QBR that leads with their success, gets ahead of risk, and opens expansion without a pitch. |
+| **/loop:manage-up** | A forecast-call pack: an honest read of the territory, your big bets, and specific asks of leadership. |
 
 You do not have to remember any of these. Say what you are doing and the right one runs:
 
@@ -80,21 +87,22 @@ Loop customers running complex, multi-stakeholder, mid-market and enterprise dea
 
 ## Upgrading from an earlier version
 
-The plays were renamed with a `loop-` prefix so they sit together in your menu:
+It is now two plugins: `olli` for `/olli:chat` and `loop` for the plays (`/loop:...`). Reinstall it once (the install line above handles this), then:
 
-| Was | Now |
-|-----|-----|
-| sales-plays | `loop-plays` |
-| multithread | `loop-multithread` |
-| account-planning | `loop-account-plan` |
-| call-prep | `loop-call-prep` |
-| call-follow-up | `loop-follow-up` |
-| champion-enablement | `loop-champion` |
-| competitive-displacement | `loop-displace` |
-| deal-advancement | `loop-advance` |
-| qbr-prep | `loop-qbr` |
-| manage-up | `loop-manage-up` |
-| one-page-business-case | `loop-business-case` |
+| Was (1.0) | Was (1.1) | Now |
+|-----|-----|-----|
+| sales-plays | `loop-plays` | `loop:plays` |
+| multithread | `loop-multithread` | `loop:multithread` |
+| account-planning | `loop-account-plan` | `loop:account-plan` |
+| call-prep | `loop-call-prep` | `loop:call-prep` |
+| call-follow-up | `loop-follow-up` | `loop:follow-up` |
+| champion-enablement | `loop-champion` | `loop:champion` |
+| competitive-displacement | `loop-displace` | `loop:displace` |
+| deal-advancement | `loop-advance` | `loop:advance` |
+| qbr-prep | `loop-qbr` | `loop:qbr` |
+| manage-up | `loop-manage-up` | `loop:manage-up` |
+| one-page-business-case | `loop-business-case` | `loop:business-case` |
+| — | `uncommon-sales-skills:olli` | `olli:chat` |
 
 ---
 

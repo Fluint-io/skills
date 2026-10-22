@@ -5,14 +5,30 @@
     "url": "https://www.fluint.io"
   },
   "metadata": {
-    "description": "Ten sales-play skills that run enterprise deals the way top reps sell: in the buyer's own language, sourced from your live deal data, ending in a forwardable asset. Built on the Selling With and Brief & Brilliant frameworks.",
-    "version": "1.1.1"
+    "description": "Olli and the Loop sales plays, inside the AI you already use.",
+    "version": "1.2.0"
   },
   "plugins": [
     {
-      "name": "uncommon-sales-skills",
-      "description": "Ten sales-play skills that run enterprise deals the way top reps sell: in the buyer's own language, sourced from your live deal data, ending in a forwardable asset. Built on the Selling With and Brief & Brilliant frameworks.",
-      "version": "1.1.1",
+      "name": "olli",
+      "description": "Chat with Olli, Fluint's AI sales agent, inside your AI assistant: brief, calm, strategic, written in the buyer's words, and reading your deals from Loop.",
+      "version": "1.2.0",
+      "author": {
+        "name": "Fluint.io",
+        "url": "https://www.fluint.io"
+      },
+      "category": "sales",
+      "tags": [
+        "sales",
+        "olli",
+        "writing"
+      ],
+      "source": "./plugins/olli"
+    },
+    {
+      "name": "loop",
+      "description": "Eleven sales plays that run enterprise deals the way top reps sell: in the buyer's own language, read from your Loop deals, each ending in a forwardable asset. Built on the Selling With and Brief & Brilliant frameworks.",
+      "version": "1.2.0",
       "author": {
         "name": "Fluint.io",
         "url": "https://www.fluint.io"
@@ -25,7 +41,7 @@
         "business-case",
         "discovery"
       ],
-      "source": "./"
+      "source": "./plugins/loop"
     }
   ]
 }

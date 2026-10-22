@@ -5,7 +5,7 @@ description: Install the Uncommon Sales Skills plugin and connect the Loop MCP.
 
 # Install Uncommon Sales Skills
 
-Eleven enterprise sales plays (`/loop-*`) plus `/olli`, Fluint's AI sales agent, all running on your live deal data through Loop, Fluint's MCP.
+Eleven enterprise sales plays (`/loop:*`) plus `/olli:chat`, Fluint's AI sales agent, all running on your live deal data through Loop, Fluint's MCP.
 
 https://github.com/Fluint-io/uncommon-sales-skills
 
@@ -21,17 +21,28 @@ claude --version
 
 If it prints a version, you are in Claude Code: do steps 2 and 3. If not, skip to "Other hosts".
 
-## 2. Install the plugin (Claude Code)
+## 2. Install the plugins (Claude Code)
 
 ~~~bash
 claude plugin marketplace add Fluint-io/uncommon-sales-skills
-claude plugin install uncommon-sales-skills@uncommon-sales-skills
+claude plugin install olli@uncommon-sales-skills
+claude plugin install loop@uncommon-sales-skills
 ~~~
+
+Two plugins, two prefixes: `olli` gives `/olli:chat`, `loop` gives the plays (`/loop:call-prep`, `/loop:business-case`, ...). Install both; Olli runs the plays for deliverables.
 
 Already installed? Update instead of reinstalling:
 
 ~~~bash
 claude plugin marketplace update uncommon-sales-skills
+claude plugin update olli@uncommon-sales-skills
+claude plugin update loop@uncommon-sales-skills
+~~~
+
+The plugin used to be called `uncommon-sales-skills`. If `claude plugin list` shows that name, uninstall it before installing these, so the old commands do not linger:
+
+~~~bash
+claude plugin uninstall uncommon-sales-skills@uncommon-sales-skills
 ~~~
 
 If the user still has the original `nnasrall/uncommon-sales-skills` marketplace, that copy has the old skill names (`call-prep`, `sales-plays`, ...). Remove it first with `claude plugin marketplace remove uncommon-sales-skills`, then add this one.
@@ -59,7 +70,7 @@ Loop is required. It is the only data source the skills use, and they stop if it
 You cannot install these yourself. Give the user these steps verbatim.
 
 **Claude app (claude.ai, desktop):**
-1. Customize → Plugins → Add marketplace → `Fluint-io/uncommon-sales-skills`. Install **Uncommon Sales Skills** and turn on **Sync automatically**.
+1. Customize → Plugins → Add marketplace → `Fluint-io/uncommon-sales-skills`. Install both **olli** and **loop**, and turn on **Sync automatically**.
 2. Settings → Connectors → Add custom connector → `https://mcp.fluint.io/mcp`, then sign in with Fluint.
 
 **ChatGPT / Codex (workspace admin):**
@@ -74,11 +85,11 @@ New skills load in a new session. Tell the user to start one (or restart Claude 
 Uncommon Sales Skills is installed. Eleven plays, each ending in something you can send.
 
 Try one:
-1. /loop-plays Help me figure out what this deal needs next.
-2. /loop-call-prep Prep me for my next call.
-3. /loop-advance Why is my biggest open deal stuck?
-4. /loop-business-case Build the business case for my top deal.
-5. /olli Talk a deal through with Olli.
+1. /loop:plays Help me figure out what this deal needs next.
+2. /loop:call-prep Prep me for my next call.
+3. /loop:advance Why is my biggest open deal stuck?
+4. /loop:business-case Build the business case for my top deal.
+5. /olli:chat Talk a deal through with Olli.
 
 Or just describe the deal in your own words. The right play picks itself.
 ~~~

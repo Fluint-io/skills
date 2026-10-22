@@ -1,0 +1,4 @@
+interface:
+  display_name: "Olli"
+  short_description: "Chat with Olli, Fluint's AI sales agent"
+  default_prompt: "Use $chat to talk through a deal with Olli."
