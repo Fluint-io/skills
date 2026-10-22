@@ -8,12 +8,11 @@
 ## Install the marketplace
 
 1. In Claude, open **Settings → Customize → Plugins** and click **Add**.
-2. Choose **Add marketplace** and paste the repository:
+2. Link the GitHub repository:
    ```
    Fluint-io/skills
    ```
-3. Install all twelve skills (eleven plays plus Olli), or pick the ones you want.
-4. Turn on **Sync automatically** so installs update themselves when the repo changes.
+3. On the **Discover** tab, add both **Olli** and **Loop**.
 
 ### Single-skill option
 
