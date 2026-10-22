@@ -10,7 +10,7 @@
 1. In Claude, open **Customize → Plugins** (or **Settings → Capabilities → Plugins**).
 2. Choose **Add marketplace** and paste the repository:
    ```
-   Fluint-io/uncommon-sales-skills
+   Fluint-io/skills
    ```
 3. Install all twelve skills (eleven plays plus Olli), or pick the ones you want.
 4. Turn on **Sync automatically** so installs update themselves when the repo changes.

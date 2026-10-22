@@ -7,7 +7,7 @@ description: Install the Uncommon Sales Skills plugin and connect the Loop MCP.
 
 Eleven enterprise sales plays (`/loop:*`) plus `/olli:chat`, Fluint's AI sales agent, all running on your live deal data through Loop, Fluint's MCP.
 
-https://github.com/Fluint-io/uncommon-sales-skills
+https://github.com/Fluint-io/skills
 
 You are an agent following these steps for the user. Run the commands yourself; only hand a step to the user when it needs their browser or an admin console.
 
@@ -24,7 +24,7 @@ If it prints a version, you are in Claude Code: do steps 2 and 3. If not, skip t
 ## 2. Install the plugins (Claude Code)
 
 ~~~bash
-claude plugin marketplace add Fluint-io/uncommon-sales-skills
+claude plugin marketplace add Fluint-io/skills
 claude plugin install olli@uncommon-sales-skills
 claude plugin install loop@uncommon-sales-skills
 ~~~
@@ -70,11 +70,11 @@ Loop is required. It is the only data source the skills use, and they stop if it
 You cannot install these yourself. Give the user these steps verbatim.
 
 **Claude app (claude.ai, desktop):**
-1. Customize → Plugins → Add marketplace → `Fluint-io/uncommon-sales-skills`. Install both **olli** and **loop**, and turn on **Sync automatically**.
+1. Customize → Plugins → Add marketplace → `Fluint-io/skills`. Install both **olli** and **loop**, and turn on **Sync automatically**.
 2. Settings → Connectors → Add custom connector → `https://mcp.fluint.io/mcp`, then sign in with Fluint.
 
 **ChatGPT / Codex (workspace admin):**
-1. Admin → Plugins → Add → Import marketplace → `https://github.com/Fluint-io/uncommon-sales-skills`.
+1. Admin → Plugins → Add → Import marketplace → `https://github.com/Fluint-io/skills`.
 2. Add `https://mcp.fluint.io/mcp` as a connector and sign in with Fluint.
 
 ## 4. Getting started

@@ -15,14 +15,14 @@ Built by [Nate Nasralla](https://www.fluint.io), author of *Selling With* and *B
 Paste this into Claude Code or Codex:
 
 ```
-Install and set up Uncommon Sales Skills and the Loop MCP by following https://raw.githubusercontent.com/Fluint-io/uncommon-sales-skills/main/INSTALL.md
+Install and set up Uncommon Sales Skills and the Loop MCP by following https://raw.githubusercontent.com/Fluint-io/skills/main/INSTALL.md
 ```
 
 It adds two plugins, **olli** (`/olli:chat`) and **loop** (the plays, `/loop:...`), and connects your Loop account. Prefer to install the plugins yourself? In Claude Code:
 
 ```
-/plugin install olli --marketplace Fluint-io/uncommon-sales-skills
-/plugin install loop --marketplace Fluint-io/uncommon-sales-skills
+/plugin install olli --marketplace Fluint-io/skills
+/plugin install loop --marketplace Fluint-io/skills
 ```
 
 The paste-in line above also connects Loop for you. The only thing left to you is signing in to Fluint. Using the Claude app or ChatGPT instead? [INSTALL.md](INSTALL.md) has the click-through steps.

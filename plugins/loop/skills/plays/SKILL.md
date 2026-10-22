@@ -35,7 +35,7 @@ there is no deal yet, route from the table.
 
 If Loop is not connected, stop and tell the seller to connect it: in Claude Code run `/mcp` and
 authenticate `loop`, or follow
-https://raw.githubusercontent.com/Fluint-io/uncommon-sales-skills/main/INSTALL.md.
+https://raw.githubusercontent.com/Fluint-io/skills/main/INSTALL.md.
 
 ## How to route
 

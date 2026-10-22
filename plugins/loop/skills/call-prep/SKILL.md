@@ -79,7 +79,7 @@ How to read what comes back:
 
 **Loop not connected?** Stop and tell the seller to connect it before going further: in
 Claude Code run `/mcp` and authenticate `loop`, or follow
-https://raw.githubusercontent.com/Fluint-io/uncommon-sales-skills/main/INSTALL.md.
+https://raw.githubusercontent.com/Fluint-io/skills/main/INSTALL.md.
 Do not fall back to any other tool.
 
 Confirm the basics before building: who you are meeting (name, role), the account, the
