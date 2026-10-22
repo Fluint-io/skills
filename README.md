@@ -1,63 +1,86 @@
-# Uncommon Sales Skills
+# Loop, in the AI you already use
 
-**Ten skills that run enterprise-level sales plays the way top reps _actually_ win.**
+**Bring Olli and your Loop deals into Claude and ChatGPT.**
 
-Your favorite LLMs are trained with market average inputs, which creates generic outputs. These skills encode the specific, hard-earned wisdom that separates reps who close complex deals from reps who get stuck: selling in the buyer's own language, selling during the meetings you're not in the room for, and crafting forwardable, sticky messages. They'll pull from your live deal data, and give you tactical assets for each deal.
+You already know Olli: the sales agent in Fluint that writes like your best rep and thinks a few moves ahead on every deal. This brings Olli, and everything Loop knows about your deals, into the AI assistant you already use every day. Same voice. Same judgment. Same deals. No new tab, no copy-paste.
+
+Ask about a deal and the answer comes from Loop: your CRM, calls, and email, already read and summarized. Ask for a business case, a follow-up, or call prep, and you get the finished asset, written in your buyer's own words.
 
 Built by [Nate Nasralla](https://www.fluint.io), author of *Selling With* and *Brief & Brilliant*, on the frameworks from both books.
 
 ---
 
-## What to expect from the library of _uncommon_ skills
+## Get started
 
-- **They sell with the buyer's language, not yours.** These skills mine your call transcripts and emails for the exact words the buyer used, override the LLMs default tendencies, and write in a way that makes it easy for champions to forward your message. Which makes all the difference.
-
-- **They're built on what's _not_ in training data.** Every skill is anchored to a specific framework tested by 1,000's of sellers and built into *Selling With* and *Brief & Brilliant*.
-
-- **A single system, built with judgment.** Each skill builds on top of the others to create a single, end-to-end system that mirrors what a seasoned seller has: judgment. The ability to weave together multiple skillsets into a single deal.
-
-- **Every skill builds in a tangible asset.** Not analysis you still have to figure out how act on. A forwardable follow-up, a champion toolkit, a leadership brief, etc... You finish with the thing, ready to ship.
-
-- **They run on your real data.** The skills pull every deal from Loop, Fluint's MCP, which already fuses your CRM, calls, and email. When a fact is missing, they flag it and tell you what to do next.
-
----
-
-## The plays
-
-Not sure which one you need? Start with **loop-plays**, the front door. Describe your deal and it routes you to the right play.
-
-Every skill carries a `loop-` prefix, so they group together in the slash-command menu and never collide with another plugin's `call-prep` or `qbr`.
-
-| Skill | What it does |
-|-------|--------------|
-| **loop-plays** | The front door. Describe a deal situation and it names the moment and routes you to the right play below. |
-| **loop-multithread** | Map the buying committee on a new account or a single-threaded deal, then draft the outreach to widen it. |
-| **loop-account-plan** | Build a POV and a strategic account plan, or find and rank expansion whitespace in an existing account. |
-| **loop-call-prep** | Walk into a call with a Meeting Brief: a point of view, planned discovery, an opening frame, and the ask. |
-| **loop-follow-up** | Turn a call or demo into a stakeholder map, a confirmed problem in the buyer's words, and forwardable per-person follow-ups. |
-| **loop-champion** | Build the internal-selling kit your champion uses in the meetings you are not in: soundbite, objection reframes, a one-pager. |
-| **loop-displace** | Unseat an incumbent by changing the criteria, not winning a feature war. Differentiation, a switching story, and trap-setting questions. |
-| **loop-advance** | Diagnose why a deal stalled and generate moves to restart it, or build a backdated mutual action plan to close it. |
-| **loop-qbr** | Prep a customer quarterly review that leads with their success, gets ahead of risk, and opens expansion without a pitch. |
-| **loop-manage-up** | Prep for a forecast call or deal review: an honest read of the territory, the big bets, and specific asks of leadership. |
-| **loop-business-case** | Build a customer-specific one-page business case from your deal data, scored against a rubric, with the next move to strengthen it. |
-| **olli** | Turn the chat into a conversation with Olli, Fluint's AI sales agent: brief, calm, strategic, in the buyer's words. Olli reads your deals from Loop and runs the plays above when you ask for a deliverable. |
-
----
-
-## Install
-
-Paste this into Claude Code (or Codex):
+Paste this into Claude Code or Codex:
 
 ```
 Install and set up Uncommon Sales Skills and the Loop MCP by following https://raw.githubusercontent.com/Fluint-io/uncommon-sales-skills/main/INSTALL.md
 ```
 
-That installs all eleven `/loop-*` plays plus `/olli` and connects Loop, Fluint's MCP (`https://mcp.fluint.io/mcp`). The only step left to you is signing in to Fluint in the browser. Using the Claude app or a ChatGPT workspace instead? [INSTALL.md](INSTALL.md) has the click-through steps.
+It adds Olli and the plays, and connects your Loop account. The only thing left to you is signing in to Fluint. Using the Claude app or ChatGPT instead? [INSTALL.md](INSTALL.md) has the click-through steps.
 
-### Renamed skills
+---
 
-If you installed an earlier version, the skills were renamed to the `loop-` prefix:
+## Talk to Olli
+
+Type `/olli` and the conversation becomes Olli: brief, calm, strategic, and written the way your buyers talk. Olli stays on until you say "exit Olli".
+
+- *"What's going on with the Globex renewal?"*
+- *"Who have we actually talked to at Initech?"*
+- *"Tighten this email to their CFO."*
+- *"What should I do next on Acme?"*
+
+Olli reads the deal from Loop before answering, tells you how current that read is, and never invents a number it does not have. When you ask for a deliverable, Olli runs the matching play below and hands it back in its own voice.
+
+---
+
+## The plays
+
+Each play is one moment in a deal, built on a framework from *Selling With* and *Brief & Brilliant*, and each ends in something you can send. Olli picks the right one for you, or you can call one directly.
+
+| Play | What you walk away with |
+|------|-------------------------|
+| **/loop-plays** | Not sure what you need? Describe the deal and it points you to the right play. |
+| **/loop-call-prep** | A one-screen meeting brief: a point of view, planned discovery, the opening, and the ask. |
+| **/loop-follow-up** | A stakeholder map, the problem in the buyer's words, and a forwardable follow-up for each person on the call. |
+| **/loop-multithread** | The real buying committee, a value hypothesis for each person, and the outreach to reach them. |
+| **/loop-account-plan** | A point of view, the opportunities ranked by executive priority, and the first message to send. |
+| **/loop-champion** | The kit your champion carries into the meetings you are not in: soundbite, objection reframes, a one-pager. |
+| **/loop-displace** | A plan to unseat the incumbent by changing the criteria, not by winning a feature war. |
+| **/loop-business-case** | A one-page business case in the customer's words, scored, with the next move to strengthen it. |
+| **/loop-advance** | Why the deal stalled and the moves to restart it, or a mutual action plan to close it. |
+| **/loop-qbr** | A QBR that leads with their success, gets ahead of risk, and opens expansion without a pitch. |
+| **/loop-manage-up** | A forecast-call pack: an honest read of the territory, your big bets, and specific asks of leadership. |
+
+You do not have to remember any of these. Say what you are doing and the right one runs:
+
+- *"Prep me for my call with the VP of Ops at Acme tomorrow."*
+- *"Help me follow up after that demo, there were four people on it."*
+- *"Why is the Acme deal stuck?"*
+- *"Build the business case for Acme."*
+
+---
+
+## What makes it different
+
+- **It already knows your deals.** Everything comes from Loop, so there is nothing to paste and nothing to explain. If Loop has not seen something yet, it says so and tells you the one question that would fill the gap.
+- **It focuses where Loop says to.** When Loop has a next play for a deal, that is what Olli and the plays build around.
+- **It writes in your buyer's words.** Their phrases, their numbers, their priorities. Built to be forwarded by a champion without editing.
+- **It is built on what is not in training data.** Every play is anchored to a framework tested by thousands of sellers, not the market-average advice a general AI gives.
+- **It ends in something you can send.** Not analysis to figure out later. A follow-up, a champion kit, a business case, ready to ship.
+
+---
+
+## Who this is for
+
+Loop customers running complex, multi-stakeholder, mid-market and enterprise deals: account executives, sales engineers, and account managers. If your deals get made in rooms you are not in, and won or lost on whether your champion can carry the message, this is built for you.
+
+---
+
+## Upgrading from an earlier version
+
+The plays were renamed with a `loop-` prefix so they sit together in your menu:
 
 | Was | Now |
 |-----|-----|
@@ -75,56 +98,19 @@ If you installed an earlier version, the skills were renamed to the `loop-` pref
 
 ---
 
-## Using a skill
-
-You do not have to run a command. Describe what you are doing, and Claude reaches for the right skill. Every skill triggers on natural language:
-
-- *"Prep me for my call with the VP of Ops at Acme tomorrow."* → **loop-call-prep**
-- *"Help me follow up after that demo, there were four people on it."* → **loop-follow-up**
-- *"This deal is single-threaded, help me multithread it."* → **loop-multithread**
-- *"Why is the Acme deal stuck?"* → **loop-advance**
-- *"Build the business case for Acme."* → **loop-business-case**
-- *"Prep me for my forecast call, I need an intro from my VP."* → **loop-manage-up**
-
-Prefer to pick the play yourself? Type `/loop-` and choose from the menu, e.g. `/loop-call-prep Acme, Thursday, VP of Ops`. In Codex, use `$loop-call-prep`.
-
-The skill gathers your deal context, applies the framework, and hands you the deliverable. If something it needs is missing, it tells you the one question to go ask.
-
----
-
-## How the data sourcing works
-
-Loop is the only data source. Every skill reads the deal the same way:
-
-1. **Find the briefs.** Loop, Fluint's MCP, already fuses your CRM, calls, and emails into deal, meeting, email, and activity briefs. `find_briefs` asks the question in plain words. No ids or object types needed.
-2. **Read what matters.** `get_brief` reads the few briefs that matter for the play in full: a deal brief's summary, its next plays, and Loop's read on the deal; a meeting brief's problem statement, attendees, next steps, and the buyer's own numbers; an email brief's outstanding asks.
-3. **Focus on the next play.** A deal brief's `next_plays` is what the seller should focus on next. Every deal play is built around moving it. Loop's read on the deal (pain, champion, economic-buyer access, and so on) decides where the play digs in, and is always put in plain words, never as a score.
-4. **Pull evidence only when needed.** `get_record` pulls one raw record (an amount, a close date, a verbatim line), and only by a ref a brief points to. The brief is the answer; the record is the evidence.
-5. **Flag the gaps.** Every brief says how fresh it is (`covers_through`). When something is stale or was never captured, the skill marks it `[MISSING: ...]` and names the single highest-leverage move to close it. It never invents a number.
-
-If Loop is not connected, the skill stops and tells you how to connect it. It does not go looking in other tools.
-
----
-
-## Who this is for
-
-Account executives, sales engineers, and account managers running complex, multi-stakeholder, mid-market and enterprise deals. If your deals get made in rooms you are not in, and won or lost on whether your champion can carry the message, these are built for you.
-
----
-
 ## The thinking behind it
 
-These skills are the productized version of the system in two books:
+Olli and the plays are the productized version of the system in two books:
 
 - ***Selling With*** — the art of selling with champions to shape the internal buying conversations that decide enterprise deals.
 - ***Brief & Brilliant*** — how to simplify complex deals and sell through the noise, in the buyer's own language.
 
 ---
 
-## Contributing and feedback
+## Feedback
 
 Found a rough edge, or a play you would run differently? Open an issue. These are living skills, tuned from real deals.
 
 ## License
 
-MIT. Use them, adapt them, run them on your own pipeline.
+MIT.
