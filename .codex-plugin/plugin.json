@@ -25,7 +25,7 @@
   "interface": {
     "displayName": "Uncommon Sales Skills",
     "shortDescription": "Run enterprise sales plays in the buyer's own language",
-    "longDescription": "A full toolbox of enterprise sales plays: multithreading, account planning, call prep and follow-up, champion enablement, competitive displacement, deal advancement, QBR prep, managing up, and the one-page business case. Each pulls your live deal context (Fluint first, with CRM, call, and email fallback), writes in the buyer's own language, applies a named framework, and ends in a forwardable deliverable. Start with the router if you are not sure which play you need.",
+    "longDescription": "A full toolbox of enterprise sales plays: multithreading, account planning, call prep and follow-up, champion enablement, competitive displacement, deal advancement, QBR prep, managing up, and the one-page business case. Each pulls your live deal context (Loop first, with CRM, call, and email fallback), writes in the buyer's own language, applies a named framework, and ends in a forwardable deliverable. Start with the router if you are not sure which play you need.",
     "developerName": "Nate Nasralla",
     "category": "Productivity",
     "capabilities": [

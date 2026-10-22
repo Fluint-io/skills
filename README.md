@@ -2,7 +2,7 @@
 
 **Ten skills that run enterprise-level sales plays the way top reps _actually_ win.**
 
-Your favorite LLMs are trained with market average inputs, which creates generic outputs. These skills encode the specific, hard-earned wisdom that separates reps who close complex deals from reps who get stuck: selling in the buyer's own language, selling during the meetings you're not in the room for, and crafting forwardable, sticky messages. They'll pull from your live deal data, and give you tactical assets for each eal.
+Your favorite LLMs are trained with market average inputs, which creates generic outputs. These skills encode the specific, hard-earned wisdom that separates reps who close complex deals from reps who get stuck: selling in the buyer's own language, selling during the meetings you're not in the room for, and crafting forwardable, sticky messages. They'll pull from your live deal data, and give you tactical assets for each deal.
 
 Built by [Nate Nasralla](https://www.fluint.io), author of *Selling With* and *Brief & Brilliant*, on the frameworks from both books.
 
@@ -16,29 +16,31 @@ Built by [Nate Nasralla](https://www.fluint.io), author of *Selling With* and *B
 
 - **A single system, built with judgment.** Each skill builds on top of the others to create a single, end-to-end system that mirrors what a seasoned seller has: judgment. The ability to weave together multiple skillsets into a single deal.
 
-- **Every skill builds in a tangible asset.** Not analysis you still have to figure out how act on. A a forwardable follow-up, a champion toolkit, a leadership brief, etc... You finish with the thing, ready to ship.
+- **Every skill builds in a tangible asset.** Not analysis you still have to figure out how act on. A forwardable follow-up, a champion toolkit, a leadership brief, etc... You finish with the thing, ready to ship.
 
-- **They run on your real data.** The skills pull deal context from Fluint if you use it, or, it falls back to whatever you have connected: your CRM, call recorder, email, etc.. When a fact is missing, they flag it and tell you what to do next.
+- **They run on your real data.** The skills pull deal context from Loop, Fluint's MCP, if you use it, or, it falls back to whatever you have connected: your CRM, call recorder, email, etc.. When a fact is missing, they flag it and tell you what to do next.
 
 ---
 
 ## The plays
 
-Not sure which one you need? Start with **sales-plays**, the front door. Describe your deal and it routes you to the right play.
+Not sure which one you need? Start with **loop-plays**, the front door. Describe your deal and it routes you to the right play.
+
+Every skill carries a `loop-` prefix, so they group together in the slash-command menu and never collide with another plugin's `call-prep` or `qbr`.
 
 | Skill | What it does |
 |-------|--------------|
-| **sales-plays** | The front door. Describe a deal situation and it names the moment and routes you to the right play below. |
-| **multithread** | Map the buying committee on a new account or a single-threaded deal, then draft the outreach to widen it. |
-| **account-planning** | Build a POV and a strategic account plan, or find and rank expansion whitespace in an existing account. |
-| **call-prep** | Walk into a call with a Meeting Brief: a point of view, planned discovery, an opening frame, and the ask. |
-| **call-follow-up** | Turn a call or demo into a stakeholder map, a confirmed problem in the buyer's words, and forwardable per-person follow-ups. |
-| **champion-enablement** | Build the internal-selling kit your champion uses in the meetings you are not in: soundbite, objection reframes, a one-pager. |
-| **competitive-displacement** | Unseat an incumbent by changing the criteria, not winning a feature war. Differentiation, a switching story, and trap-setting questions. |
-| **deal-advancement** | Diagnose why a deal stalled and generate moves to restart it, or build a backdated mutual action plan to close it. |
-| **qbr-prep** | Prep a customer quarterly review that leads with their success, gets ahead of risk, and opens expansion without a pitch. |
-| **manage-up** | Prep for a forecast call or deal review: an honest read of the territory, the big bets, and specific asks of leadership. |
-| **one-page-business-case** | Build a customer-specific one-page business case from your deal data, scored against a rubric, with the next move to strengthen it. |
+| **loop-plays** | The front door. Describe a deal situation and it names the moment and routes you to the right play below. |
+| **loop-multithread** | Map the buying committee on a new account or a single-threaded deal, then draft the outreach to widen it. |
+| **loop-account-plan** | Build a POV and a strategic account plan, or find and rank expansion whitespace in an existing account. |
+| **loop-call-prep** | Walk into a call with a Meeting Brief: a point of view, planned discovery, an opening frame, and the ask. |
+| **loop-follow-up** | Turn a call or demo into a stakeholder map, a confirmed problem in the buyer's words, and forwardable per-person follow-ups. |
+| **loop-champion** | Build the internal-selling kit your champion uses in the meetings you are not in: soundbite, objection reframes, a one-pager. |
+| **loop-displace** | Unseat an incumbent by changing the criteria, not winning a feature war. Differentiation, a switching story, and trap-setting questions. |
+| **loop-advance** | Diagnose why a deal stalled and generate moves to restart it, or build a backdated mutual action plan to close it. |
+| **loop-qbr** | Prep a customer quarterly review that leads with their success, gets ahead of risk, and opens expansion without a pitch. |
+| **loop-manage-up** | Prep for a forecast call or deal review: an honest read of the territory, the big bets, and specific asks of leadership. |
+| **loop-business-case** | Build a customer-specific one-page business case from your deal data, scored against a rubric, with the next move to strengthen it. |
 
 ---
 
@@ -66,18 +68,50 @@ This is one plugin containing all the skills. Install it once and you get the wh
 
 The repo ships both a Claude manifest (`.claude-plugin/`) and a Codex manifest (`.codex-plugin/`) over one shared `skills/` folder, so a single source powers both platforms.
 
+### Connect Loop (recommended)
+
+The skills read your deals through **Loop**, Fluint's MCP server. It is optional, but it is what lets a skill start from your real deal instead of what you paste in.
+
+1. Add a custom connector (in Claude: **Settings → Connectors → Add custom connector**) with the URL:
+   ```
+   https://mcp.fluint.io/mcp
+   ```
+2. Sign in with your Fluint account. Loop only ever shows you your own organization's briefs.
+
+Loop is read-only. It exposes `find_briefs`, `get_brief`, and `get_record`, plus `search` and `fetch` for ChatGPT-style clients.
+
+### Renamed skills
+
+If you installed an earlier version, the skills were renamed to the `loop-` prefix:
+
+| Was | Now |
+|-----|-----|
+| sales-plays | `loop-plays` |
+| multithread | `loop-multithread` |
+| account-planning | `loop-account-plan` |
+| call-prep | `loop-call-prep` |
+| call-follow-up | `loop-follow-up` |
+| champion-enablement | `loop-champion` |
+| competitive-displacement | `loop-displace` |
+| deal-advancement | `loop-advance` |
+| qbr-prep | `loop-qbr` |
+| manage-up | `loop-manage-up` |
+| one-page-business-case | `loop-business-case` |
+
 ---
 
 ## Using a skill
 
-You do not run a command. You just describe what you are doing, and Claude reaches for the right skill. Every skill triggers on natural language:
+You do not have to run a command. Describe what you are doing, and Claude reaches for the right skill. Every skill triggers on natural language:
 
-- *"Prep me for my call with the VP of Ops at Acme tomorrow."* → **call-prep**
-- *"Help me follow up after that demo, there were four people on it."* → **call-follow-up**
-- *"This deal is single-threaded, help me multithread it."* → **multithread**
-- *"Why is the Acme deal stuck?"* → **deal-advancement**
-- *"Build the business case for Acme."* → **one-page-business-case**
-- *"Prep me for my forecast call, I need an intro from my VP."* → **manage-up**
+- *"Prep me for my call with the VP of Ops at Acme tomorrow."* → **loop-call-prep**
+- *"Help me follow up after that demo, there were four people on it."* → **loop-follow-up**
+- *"This deal is single-threaded, help me multithread it."* → **loop-multithread**
+- *"Why is the Acme deal stuck?"* → **loop-advance**
+- *"Build the business case for Acme."* → **loop-business-case**
+- *"Prep me for my forecast call, I need an intro from my VP."* → **loop-manage-up**
+
+Prefer to pick the play yourself? Type `/loop-` and choose from the menu, e.g. `/loop-call-prep Acme, Thursday, VP of Ops`. In Codex, use `$loop-call-prep`.
 
 The skill gathers your deal context, applies the framework, and hands you the deliverable. If something it needs is missing, it tells you the one question to go ask.
 
@@ -87,8 +121,12 @@ The skill gathers your deal context, applies the framework, and hands you the de
 
 Every skill follows the same order:
 
-1. **Fluint first.** If the [Fluint](https://www.fluint.io) MCP is connected, the skill uses it. Fluint already fuses your CRM, calls, and emails into deal, account, and meeting objects, so it is the fastest path to the real language of a deal.
-2. **Fall back to what you have.** No Fluint? The skill detects whatever is connected and pulls in parallel: your CRM (HubSpot, Salesforce, Attio, Pipedrive), your call transcripts (Salesloft, Gong, Clari, Chorus, Fathom, Fireflies), and your email (Gmail, Outlook, Superhuman).
+1. **Loop first.** If the Loop MCP from [Fluint](https://www.fluint.io) is connected, the skill uses it before anything else. Loop already fuses your CRM, calls, and emails into deal, account, meeting, and email briefs, so it is the fastest path to the real language of a deal.
+   - `find_briefs`: asks the question in plain words. No ids or object types needed.
+   - `get_brief`: reads the few briefs that matter for the play in full.
+   - `get_record`: pulls one raw record (an amount, a close date, a verbatim line) only when a brief points to it. The brief is the answer; the record is the evidence.
+   - Every brief says how fresh it is (`covers_through`). The skill tells you, and fills anything newer from the fallback sources.
+2. **Fall back to what you have.** No Loop? The skill detects whatever is connected and pulls in parallel: your CRM (HubSpot, Salesforce, Attio, Pipedrive), your call transcripts (Salesloft, Gong, Clari, Chorus, Fathom, Fireflies), and your email (Gmail, Outlook, Superhuman).
 3. **Flag the gaps.** When a source is missing or a fact was never captured, the skill marks it and names the single highest-leverage move to close it. It never invents a number.
 
 The skills work without any of these connected too. They will just lean on what you paste in and flag the rest.
