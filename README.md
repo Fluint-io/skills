@@ -102,7 +102,6 @@ It is now two plugins: `olli` for `/olli:chat` and `loop` for the plays (`/loop:
 | qbr-prep | `loop-qbr` | `loop:qbr` |
 | manage-up | `loop-manage-up` | `loop:manage-up` |
 | one-page-business-case | `loop-business-case` | `loop:business-case` |
-| — | `uncommon-sales-skills:olli` | `olli:chat` |
 
 ---
 
