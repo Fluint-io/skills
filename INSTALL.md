@@ -52,7 +52,7 @@ claude mcp add --transport http --scope user loop https://mcp.fluint.io/mcp
 
 Loop signs in with OAuth in a browser, which you cannot do. Tell the user: run `/mcp`, choose `loop`, choose Authenticate, and sign in with their Fluint account.
 
-Loop is optional. Without it the skills fall back to whatever CRM, call recorder, or email tools are connected, or to what the user pastes in. If the user has no Fluint account, say so and continue.
+Loop is required. It is the only data source the skills use, and they stop if it is not connected. If the user has no Fluint account, tell them they need one before the skills will work.
 
 ## Other hosts
 

@@ -6,8 +6,7 @@ description: >-
   [competitor]", "displace the incumbent", "how do I unseat [vendor]", "they're
   already using [tool]", "competitive deal", "compete against [X]", "win against
   the incumbent", or is in an evaluation where another provider is the default. It
-  pulls context from Loop first (falling back to CRM, call transcripts, and
-  email), reads the incumbent's strengths and gaps, builds a differentiation
+  pulls context from Loop, reads the incumbent's strengths and gaps, builds a differentiation
   narrative based on approach and outcome (not a feature war), writes the switching
   story, and gives you trap-setting questions that surface the incumbent's gaps
   without badmouthing. Prefer this over a feature-comparison battlecard any time a
@@ -33,28 +32,59 @@ The deliverable is a displacement plan you can run in the next conversation.
 
 ## Step 1: Lock the deal and pull context
 
-**Loop first.** If the Loop MCP (`mcp.fluint.io`) is connected, use it before anything
-else. Loop already fuses your CRM, calls, and emails into briefs, so it is the fastest path
-to the real language of the deal. The brief is the answer; the raw record is only evidence.
-- `find_briefs` with the question in plain words ("Acme deal, what are they using today and how do they feel about it"). You do not need ids or types
-  first. It returns each brief's summary and an `entity_ref`.
-- `get_brief` on the few hits that matter: the `deal_brief`, the `meeting_brief`s, and any brief that names the incumbent or competitor.
-- `get_record` only when you need an exact field the brief points to (the competitor named on the deal record, a renewal date, a verbatim complaint), using a
-  ref from that brief's `source_records`. Never go hunting for raw records another way.
-- Every brief carries `covers_through`. Say how fresh it is. If it predates the latest
-  touch, flag that and fill the gap from the fallback sources below.
+**Read the briefs.** Loop (`mcp.fluint.io`) is the only data source. It turns the CRM,
+calls, and email into briefs: a `deal_brief` per opportunity, a `meeting_brief` per call, an
+`email_brief` per thread, and an `activity_brief` per deal's logged tasks and notes. Do not
+reach for any other tool, even if one is connected. The brief is the answer; a raw record is
+only evidence.
 
-**No Loop? Detect what is live and fall back.** Do not assume a vendor. In parallel:
-- CRM (HubSpot, Salesforce, Attio, Pipedrive) = the deal, the named competitor, notes.
-- Call transcripts (Salesloft, Gong, Clari, Chorus, Fathom, Fireflies; or via Clay / Deepline) = what the buyer
-  has said about their current solution and its frustrations.
-- Email (Superhuman, Gmail, Outlook) = recent signals.
+1. `find_briefs` naming the deal and the competitor ("Acme deal, what are they using today
+   and how do they feel about it").
+2. `get_brief` the `deal_brief`.
+3. `get_brief` the `meeting_brief`s and `email_brief`s that mention the incumbent.
+4. `get_record` on a meeting's own source record for the buyer's exact words about the
+   incumbent.
+
+Where each piece goes:
+- The competitive-position reasoning: who you are really up against, including the status quo
+  and tools they already own.
+- The decision-criteria reasoning: whether the criteria are set, and so whether there is still
+  room to change them.
+- `problem_statement` and `metrics`: the villain and the switching story, in their words.
+- The top `next_plays` entry: what the next conversation has to accomplish.
+
+How to read what comes back:
+- **`next_plays`** (on the `deal_brief`) is what the seller should focus on next on this deal,
+  ranked. Read the first entry's `label`, `narrative`, and `facts`, and build this play around
+  moving it. If it holds only an `unsupported_reason`, there is no pick yet; say so.
+- **`predictors`** (on the `deal_brief`) are Loop's read on eight things: pain validated,
+  metrics quantified, champion strength, economic-buyer access, decision criteria known,
+  decision process known, paper process known, and competitive position. Each carries a
+  score and its reasoning. Use the weakest to decide where to focus. **Never show the seller a
+  score or a predictor name.** Say what the reasoning says, in plain words: "the economic buyer
+  has not been in a conversation since January", not "economic_buyer_access: 20".
+- **Skip `plays`.** It tags what each past event was, not what to do next.
+- **Freshness.** Every brief carries `covers_through`. Say how current it is. If the seller
+  mentions something newer than the brief, flag it as `[MISSING: ...]`.
+- A `meeting_brief` holds `problem_statement`, `attendees` (name, title, whether they spoke),
+  `next_steps` (owner, step, committed, due), and `metrics` (the buyer's own numbers, labelled).
+- An `email_brief` holds `correspondence`: what is still outstanding on the thread.
+- An `activity_brief` holds a `timeline` of logged tasks and notes. It lives on the deal's own
+  `entity_ref`: call `get_brief` with that ref and `brief_type: "activity_brief"`.
+- A deal brief does not list its meetings. Find them with `find_briefs` naming the account,
+  filtered to `brief_types: ["meeting_brief", "email_brief"]`. A meeting brief's
+  `source_records` names its deal (`hubspot_deal:123` is the deal at `hubspot:deal:123`).
+
+**Loop not connected?** Stop and tell the seller to connect it before going further: in
+Claude Code run `/mcp` and authenticate `loop`, or follow
+https://raw.githubusercontent.com/Fluint-io/uncommon-sales-skills/main/INSTALL.md.
+Do not fall back to any other tool.
 
 Confirm who the incumbent or competitor is. If it is unknown, that is the first thing to find.
 
-**Missing a source? Flag it, and make the gap a move.** Mark it inline as `[MISSING: ...]` and continue. Every gap gets the single highest-leverage way to close it: the one question, to the one person, at the next touchpoint. Not "get more data."
+**Loop missing a fact? Flag it, and make the gap a move.** Mark it inline as `[MISSING: ...]` and continue. Every gap gets the single highest-leverage way to close it: the one question, to the one person, at the next touchpoint. Not "get more data."
 
-**Who can actually say yes?** Name the people with the power to approve this, or to block it, and mark whether they are engaged yet. Power is often not in the room. If the deciders are absent or untouched, that is the headline, not a footnote.
+**Who can actually say yes?** Name the people with the power to approve this, or to block it, and mark whether they are engaged yet. Start from the deal summary, which usually names the economic buyer, and the economic-buyer-access and decision-process reasoning, which say whether they have been in the conversation. Power is often not in the room. If the deciders are absent or untouched, that is the headline, not a footnote.
 
 ## Step 2: Read the incumbent
 

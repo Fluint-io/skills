@@ -7,7 +7,7 @@ description: >-
   an agenda for the [account] call", "what should I ask on discovery", "brief me
   before this demo", "I've got a call with [name] tomorrow", or wants a pre-call
   brief, a discovery plan, or a meeting agenda. It pulls the account and attendee
-  context from Loop first (falling back to CRM, call transcripts, and email),
+  context from Loop,
   builds a POV on what is changing at the account, plans discovery on the
   Problem/Process/Payoff roadmap, and writes the opening frame and the ask.
   Prefer this over freehand prep any time a seller is getting ready for a
@@ -32,29 +32,62 @@ nothing.
 
 ## Step 1: Lock the target and pull context
 
-**Loop first.** If the Loop MCP (`mcp.fluint.io`) is connected, use it before anything
-else. Loop already fuses your CRM, calls, and emails into briefs, so it is the fastest path
-to the real language of the account. The brief is the answer; the raw record is only evidence.
-- `find_briefs` with the question in plain words ("upcoming call with Dana Lee at Acme"). You do not need ids or types
-  first. It returns each brief's summary and an `entity_ref`.
-- `get_brief` on the few hits that matter: the `account_brief`, the `deal_brief` if one exists, and `meeting_brief`s for any prior calls with these people.
-- `get_record` only when you need an exact field the brief points to (an attendee's title, a stage, a quote from a past call), using a
-  ref from that brief's `source_records`. Never go hunting for raw records another way.
-- Every brief carries `covers_through`. Say how fresh it is. If it predates the latest
-  touch, flag that and fill the gap from the fallback sources below.
+**Read the briefs.** Loop (`mcp.fluint.io`) is the only data source. It turns the CRM,
+calls, and email into briefs: a `deal_brief` per opportunity, a `meeting_brief` per call, an
+`email_brief` per thread, and an `activity_brief` per deal's logged tasks and notes. Do not
+reach for any other tool, even if one is connected. The brief is the answer; a raw record is
+only evidence.
 
-**No Loop? Detect what is live and fall back.** Do not assume a vendor. Pull in
-parallel from whatever is connected:
-- CRM (HubSpot, Salesforce, Attio, Pipedrive) = the record, stage, contacts, notes.
-- Call transcripts (Salesloft, Gong, Clari, Chorus, Fathom, Fireflies; or via Clay / Deepline) = their words.
-- Email (Superhuman, Gmail, Outlook) = stated priorities, timing, who is cc'd.
+1. `find_briefs` with who and what the call is ("call with Dana Lee at Acme about the
+   security review"). No ids or types needed.
+2. `get_brief` the `deal_brief` for the opportunity, if one exists.
+3. `get_brief` the two or three most recent `meeting_brief`s and `email_brief`s with these
+   people or this account.
+4. `get_record` only for an exact quote: a meeting's own record (from its `source_records`)
+   carries the call, usually with the transcript.
+
+Where each piece goes:
+- `attendees` across past meetings: who is in the room, their title, and whether they have
+  ever spoken up.
+- `problem_statement` and `metrics`: the raw material for the POV and the Problem questions.
+- `next_steps` marked committed but not yet done, and outstanding `correspondence`: the open
+  loops to raise in the first five minutes.
+- The weakest predictors: what the Process questions must uncover.
+- The top `next_plays` entry: the meeting objective.
+
+How to read what comes back:
+- **`next_plays`** (on the `deal_brief`) is what the seller should focus on next on this deal,
+  ranked. Read the first entry's `label`, `narrative`, and `facts`, and build this play around
+  moving it. If it holds only an `unsupported_reason`, there is no pick yet; say so.
+- **`predictors`** (on the `deal_brief`) are Loop's read on eight things: pain validated,
+  metrics quantified, champion strength, economic-buyer access, decision criteria known,
+  decision process known, paper process known, and competitive position. Each carries a
+  score and its reasoning. Use the weakest to decide where to focus. **Never show the seller a
+  score or a predictor name.** Say what the reasoning says, in plain words: "the economic buyer
+  has not been in a conversation since January", not "economic_buyer_access: 20".
+- **Skip `plays`.** It tags what each past event was, not what to do next.
+- **Freshness.** Every brief carries `covers_through`. Say how current it is. If the seller
+  mentions something newer than the brief, flag it as `[MISSING: ...]`.
+- A `meeting_brief` holds `problem_statement`, `attendees` (name, title, whether they spoke),
+  `next_steps` (owner, step, committed, due), and `metrics` (the buyer's own numbers, labelled).
+- An `email_brief` holds `correspondence`: what is still outstanding on the thread.
+- An `activity_brief` holds a `timeline` of logged tasks and notes. It lives on the deal's own
+  `entity_ref`: call `get_brief` with that ref and `brief_type: "activity_brief"`.
+- A deal brief does not list its meetings. Find them with `find_briefs` naming the account,
+  filtered to `brief_types: ["meeting_brief", "email_brief"]`. A meeting brief's
+  `source_records` names its deal (`hubspot_deal:123` is the deal at `hubspot:deal:123`).
+
+**Loop not connected?** Stop and tell the seller to connect it before going further: in
+Claude Code run `/mcp` and authenticate `loop`, or follow
+https://raw.githubusercontent.com/Fluint-io/uncommon-sales-skills/main/INSTALL.md.
+Do not fall back to any other tool.
 
 Confirm the basics before building: who you are meeting (name, role), the account, the
 stage, and what this meeting is for. If any are unclear, ask.
 
-**Missing a source? Flag it, and make the gap a move.** Mark it inline as `[MISSING: ...]` and continue. Every gap gets the single highest-leverage way to close it: the one question, to the one person, at the next touchpoint. Not "get more data."
+**Loop missing a fact? Flag it, and make the gap a move.** Mark it inline as `[MISSING: ...]` and continue. Every gap gets the single highest-leverage way to close it: the one question, to the one person, at the next touchpoint. Not "get more data."
 
-**Who can actually say yes?** Name the people with the power to approve this, or to block it, and mark whether they are engaged yet. Power is often not in the room. If the deciders are absent or untouched, that is the headline, not a footnote.
+**Who can actually say yes?** Name the people with the power to approve this, or to block it, and mark whether they are engaged yet. Start from the deal summary, which usually names the economic buyer, and the economic-buyer-access and decision-process reasoning, which say whether they have been in the conversation. Power is often not in the room. If the deciders are absent or untouched, that is the headline, not a footnote.
 
 ## Step 2: Build the POV
 
@@ -62,12 +95,13 @@ Read `references/frameworks.md` (POV section). A point of view is a short, speci
 what is changing at the account that makes your thing matter more now than six months ago.
 Not a pitch.
 
-Lead with something you actually found: a hire, a launch, a funding event, a line from
-their earnings call, a pattern in the deal history. Then draw the line: what does that
+Lead with something you actually found in the briefs: a line in a `problem_statement`, a
+number in `metrics`, a theme that keeps coming up across meetings, a pattern in the deal
+summary. Then draw the line: what does that
 change mean for them, and whose priority does it touch. A problem only gets funded when
 it blocks a priority someone already owns.
 
-If you cannot find a real signal, say so (`[MISSING: no recent trigger found]`) rather
+If the briefs hold no real signal, say so (`[MISSING: no recent trigger in Loop]`) rather
 than inventing one. A made-up POV dies the moment they poke it.
 
 ## Step 3: Plan the discovery

@@ -24,6 +24,19 @@ you to the move.
 If the seller has clearly named a specific need (for example "prep me for my call" or "why is
 this deal stuck"), let that skill fire instead. This router is for the ambiguous case.
 
+## Read the deal first
+
+Before routing, read the deal from Loop (`mcp.fluint.io`), the only data source:
+`find_briefs` naming it, then `get_brief` on its `deal_brief`. The `next_plays` section is what
+the seller should focus on next on this deal. Read the first entry's `label` and `narrative`,
+route to the play that moves it, and say so ("Loop's next play here is getting the economic
+buyer engaged, so start with loop-multithread"). If it holds only an `unsupported_reason`, or
+there is no deal yet, route from the table.
+
+If Loop is not connected, stop and tell the seller to connect it: in Claude Code run `/mcp` and
+authenticate `loop`, or follow
+https://raw.githubusercontent.com/Fluint-io/uncommon-sales-skills/main/INSTALL.md.
+
 ## How to route
 
 First, get just enough context to place the deal. Ask one or two questions if the moment is
@@ -50,7 +63,7 @@ loop-business-case). Say so, and start with the one that unblocks the rest.
 ## The through-line
 
 Every play in this toolbox runs the same way, so set the expectation up front:
-- It pulls the deal context (Loop first, then CRM, calls, and email).
+- It reads the deal from Loop's briefs, and builds around the deal's top `next_plays` entry.
 - It writes in the buyer's own language, built to be forwarded. Camouflage, not a billboard.
 - It flags what is missing and names the one move to close the gap.
 - It ends in a deliverable, plus an operator's read: the judgment a summary hides.

@@ -18,7 +18,7 @@ Built by [Nate Nasralla](https://www.fluint.io), author of *Selling With* and *B
 
 - **Every skill builds in a tangible asset.** Not analysis you still have to figure out how act on. A forwardable follow-up, a champion toolkit, a leadership brief, etc... You finish with the thing, ready to ship.
 
-- **They run on your real data.** The skills pull deal context from Loop, Fluint's MCP, if you use it, or, it falls back to whatever you have connected: your CRM, call recorder, email, etc.. When a fact is missing, they flag it and tell you what to do next.
+- **They run on your real data.** The skills pull every deal from Loop, Fluint's MCP, which already fuses your CRM, calls, and email. When a fact is missing, they flag it and tell you what to do next.
 
 ---
 
@@ -93,17 +93,15 @@ The skill gathers your deal context, applies the framework, and hands you the de
 
 ## How the data sourcing works
 
-Every skill follows the same order:
+Loop is the only data source. Every skill reads the deal the same way:
 
-1. **Loop first.** If the Loop MCP from [Fluint](https://www.fluint.io) is connected, the skill uses it before anything else. Loop already fuses your CRM, calls, and emails into deal, account, meeting, and email briefs, so it is the fastest path to the real language of a deal.
-   - `find_briefs`: asks the question in plain words. No ids or object types needed.
-   - `get_brief`: reads the few briefs that matter for the play in full.
-   - `get_record`: pulls one raw record (an amount, a close date, a verbatim line) only when a brief points to it. The brief is the answer; the record is the evidence.
-   - Every brief says how fresh it is (`covers_through`). The skill tells you, and fills anything newer from the fallback sources.
-2. **Fall back to what you have.** No Loop? The skill detects whatever is connected and pulls in parallel: your CRM (HubSpot, Salesforce, Attio, Pipedrive), your call transcripts (Salesloft, Gong, Clari, Chorus, Fathom, Fireflies), and your email (Gmail, Outlook, Superhuman).
-3. **Flag the gaps.** When a source is missing or a fact was never captured, the skill marks it and names the single highest-leverage move to close it. It never invents a number.
+1. **Find the briefs.** Loop, Fluint's MCP, already fuses your CRM, calls, and emails into deal, meeting, email, and activity briefs. `find_briefs` asks the question in plain words. No ids or object types needed.
+2. **Read what matters.** `get_brief` reads the few briefs that matter for the play in full: a deal brief's summary, its next plays, and Loop's read on the deal; a meeting brief's problem statement, attendees, next steps, and the buyer's own numbers; an email brief's outstanding asks.
+3. **Focus on the next play.** A deal brief's `next_plays` is what the seller should focus on next. Every deal play is built around moving it. Loop's read on the deal (pain, champion, economic-buyer access, and so on) decides where the play digs in, and is always put in plain words, never as a score.
+4. **Pull evidence only when needed.** `get_record` pulls one raw record (an amount, a close date, a verbatim line), and only by a ref a brief points to. The brief is the answer; the record is the evidence.
+5. **Flag the gaps.** Every brief says how fresh it is (`covers_through`). When something is stale or was never captured, the skill marks it `[MISSING: ...]` and names the single highest-leverage move to close it. It never invents a number.
 
-The skills work without any of these connected too. They will just lean on what you paste in and flag the rest.
+If Loop is not connected, the skill stops and tells you how to connect it. It does not go looking in other tools.
 
 ---
 

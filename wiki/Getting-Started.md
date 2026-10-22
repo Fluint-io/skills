@@ -3,7 +3,7 @@
 ## Requirements
 
 - **A paid Claude plan** (Pro, Max, Team, or Enterprise) to install plugins.
-- **Deal data**, ideally connected. The skills work best with the Loop MCP from [Fluint](https://www.fluint.io) connected, and fall back to any CRM, call recorder, or email tool you have linked. They still work with nothing connected, leaning on what you paste in.
+- **Loop**, Fluint's MCP, connected with your [Fluint](https://www.fluint.io) account. It is where every skill gets its deal data.
 
 ## Install the marketplace
 
@@ -12,23 +12,16 @@
    ```
    Fluint-io/uncommon-sales-skills
    ```
-3. Install all ten skills, or pick the ones you want.
+3. Install all eleven skills, or pick the ones you want.
 4. Turn on **Sync automatically** so installs update themselves when the repo changes.
 
 ### Single-skill option
 
 Each skill is also a standalone `.skill` file. To test just one, download it and use **Settings → Capabilities → Upload skill**.
 
-## Connect your data (recommended)
+## Connect Loop
 
-The skills gather deal context on their own from whatever is connected. To get the richest results:
-
-- **Loop** — the primary source. Connect the Loop MCP (`mcp.fluint.io`) so the skills can read your deal, account, meeting, and email briefs directly. This is the fastest path to the real language of a deal.
-- **CRM** — HubSpot, Salesforce, Attio, Pipedrive. The record, stage, contacts, and notes.
-- **Call transcripts** — Salesloft, Gong, Clari, Chorus, Fathom, Fireflies. The buyer's actual words.
-- **Email** — Gmail, Outlook, Superhuman. Stated priorities, timing, who is cc'd.
-
-If none are connected, paste the relevant call notes or email thread into the chat and the skill will work from that.
+The skills read every deal from Loop. Add a custom connector (in Claude: **Settings → Connectors → Add custom connector**) with the URL `https://mcp.fluint.io/mcp`, then sign in with your Fluint account. Loop already fuses your CRM, calls, and emails into briefs, so there is nothing else to connect.
 
 ## Run your first skill
 

@@ -2,27 +2,17 @@
 
 Every skill runs on real deal context. Here is how it gathers that context, in what order, and what happens when something is missing.
 
-## The order of precedence
+## Loop is the only source
 
-Each skill follows the same sequence in its first step.
+Every skill reads deal context from the Loop MCP from [Fluint](https://www.fluint.io) (`mcp.fluint.io`), and nothing else. Loop already fuses your CRM, calls, and emails into deal, meeting, email, and activity briefs, so it holds the real language of a deal.
 
-### 1. Loop first
+1. **`find_briefs`** — the skill asks its question in plain words. No ids or object types needed.
+2. **`get_brief`** — it reads the few briefs that matter for the play in full.
+3. **`get_record`** — it pulls a raw record (an amount, a close date, a verbatim line) only by a ref from a brief's `source_records`.
 
-If the Loop MCP from [Fluint](https://www.fluint.io) (`mcp.fluint.io`) is connected, the skill uses it before anything else. Loop already fuses your CRM, calls, and emails into deal, account, meeting, and email briefs, so it is the fastest path to the real language of a deal. The skills ask `find_briefs` in plain words, read the relevant briefs with `get_brief`, and reach a raw record through `get_record` only by a ref from a brief's `source_records`. Every brief carries `covers_through`, and the skills say how fresh it is.
+Every brief carries `covers_through`, and the skills say how fresh it is.
 
-### 2. Fall back to what you have connected
-
-No Loop? The skill detects whatever is connected and pulls from all of it in parallel, without assuming a specific vendor:
-
-| Source | Tools it recognizes | What it provides |
-|--------|---------------------|------------------|
-| CRM | HubSpot, Salesforce, Attio, Pipedrive | The record, stage, amount, close date, contacts, notes |
-| Call transcripts | Salesloft, Gong, Clari, Chorus, Fathom, Fireflies | The buyer's actual words, the richest source of their language |
-| Email | Gmail, Outlook, Superhuman | Stated priorities, timing, who is cc'd, procurement signals |
-
-### 3. Work from what you paste
-
-If nothing is connected, paste the call notes or email thread into the chat. The skill works from that and flags the rest.
+The skills do not read other CRM, call-recording, or email tools, even if they are connected. If Loop is not connected, the skill stops and tells you how to connect it.
 
 ## What the skills do with the context
 
@@ -40,4 +30,4 @@ A flagged gap is not a failure. It is the next thing to go get, and often the mo
 
 ## A note on privacy
 
-The skills read the deal context you give them access to and produce output in your chat. They do not send your data anywhere on their own. Connecting a source (Loop, a CRM, a call tool) is something you do in Claude's own settings, and you control what each one can see.
+The skills read the deal context you give them access to and produce output in your chat. They do not send your data anywhere on their own. Connecting Loop is something you do in Claude's own settings, and Loop only ever shows you your own organization's briefs.

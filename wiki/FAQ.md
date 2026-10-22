@@ -6,11 +6,7 @@ Yes, to install a plugin marketplace. Pro, Max, Team, or Enterprise. Individual 
 
 ## Do I need Loop to use these?
 
-No. Loop, Fluint's MCP, is the primary and richest data source, but every skill falls back to your CRM, call recorder, and email, and works even with nothing connected by leaning on what you paste in. Loop just makes it faster and more complete. Learn more at [fluint.io](https://www.fluint.io).
-
-## What CRMs and call tools work?
-
-The skills are tool-agnostic. They recognize the common ones (HubSpot, Salesforce, Attio, Pipedrive for CRM; Salesloft, Gong, Clari, Chorus, Fathom, Fireflies for calls; Gmail, Outlook, Superhuman for email) and use whatever you have connected in Claude.
+Yes. Loop, Fluint's MCP, is the only data source the skills use. It already fuses your CRM, calls, and email into briefs, so the skills do not connect to those tools directly. Learn more at [fluint.io](https://www.fluint.io).
 
 ## How do I actually run a skill?
 

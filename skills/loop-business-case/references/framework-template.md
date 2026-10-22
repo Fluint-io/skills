@@ -74,7 +74,7 @@ customer's outcome from that date.
 
 ## Extraction checklist: what to mine from context (Step 2)
 
-As you read CRM notes, transcripts, and emails, hunt specifically for these. Capture
+As you read the Loop briefs and their source records, hunt specifically for these. Capture
 verbatim quotes and note the source (which call/email/field) so claims stay
 defensible.
 
