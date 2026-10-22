@@ -90,6 +90,10 @@ All ten skills, grouped by deal stage. Each entry: what it does, when it fires, 
 **Framework:** Managing up (enable leadership like a champion), forecasting on group behavior not champion optimism, the 60-Second Deal Review, math-versus-drama, and the specific ask delivered as a drafted asset.
 **Deliverable:** A leadership review: a graded forecast, 60-second deal reviews, the big bets, and an ask list with each ask drafted and ready to send.
 
+### olli
+**Does:** Switches the conversation to Olli, Fluint's AI sales agent, for the rest of the chat. Olli's behavior comes from the same behavioral prompt as Olli in the Fluint app: brief, calm, strategic, written in the buyer's words, one provocative thought per response. Olli reads deals from Loop and runs the matching play when you ask for a deliverable, keeping its own voice. Say "exit Olli" to go back.
+**Fires on:** "/olli," "talk to Olli," "let me chat with Olli."
+
 ---
 
 ## A note on overlap

@@ -5,7 +5,7 @@ description: Install the Uncommon Sales Skills plugin and connect the Loop MCP.
 
 # Install Uncommon Sales Skills
 
-Eleven enterprise sales plays (`/loop-*`) that run on your live deal data through Loop, Fluint's MCP.
+Eleven enterprise sales plays (`/loop-*`) plus `/olli`, Fluint's AI sales agent, all running on your live deal data through Loop, Fluint's MCP.
 
 https://github.com/Fluint-io/uncommon-sales-skills
 
@@ -78,6 +78,7 @@ Try one:
 2. /loop-call-prep Prep me for my next call.
 3. /loop-advance Why is my biggest open deal stuck?
 4. /loop-business-case Build the business case for my top deal.
+5. /olli Talk a deal through with Olli.
 
 Or just describe the deal in your own words. The right play picks itself.
 ~~~

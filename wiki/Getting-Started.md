@@ -12,7 +12,7 @@
    ```
    Fluint-io/uncommon-sales-skills
    ```
-3. Install all eleven skills, or pick the ones you want.
+3. Install all twelve skills (eleven plays plus Olli), or pick the ones you want.
 4. Turn on **Sync automatically** so installs update themselves when the repo changes.
 
 ### Single-skill option

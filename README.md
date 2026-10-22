@@ -41,6 +41,7 @@ Every skill carries a `loop-` prefix, so they group together in the slash-comman
 | **loop-qbr** | Prep a customer quarterly review that leads with their success, gets ahead of risk, and opens expansion without a pitch. |
 | **loop-manage-up** | Prep for a forecast call or deal review: an honest read of the territory, the big bets, and specific asks of leadership. |
 | **loop-business-case** | Build a customer-specific one-page business case from your deal data, scored against a rubric, with the next move to strengthen it. |
+| **olli** | Turn the chat into a conversation with Olli, Fluint's AI sales agent: brief, calm, strategic, in the buyer's words. Olli reads your deals from Loop and runs the plays above when you ask for a deliverable. |
 
 ---
 
@@ -52,7 +53,7 @@ Paste this into Claude Code (or Codex):
 Install and set up Uncommon Sales Skills and the Loop MCP by following https://raw.githubusercontent.com/Fluint-io/uncommon-sales-skills/main/INSTALL.md
 ```
 
-That installs all eleven `/loop-*` skills and connects Loop, Fluint's MCP (`https://mcp.fluint.io/mcp`). The only step left to you is signing in to Fluint in the browser. Using the Claude app or a ChatGPT workspace instead? [INSTALL.md](INSTALL.md) has the click-through steps.
+That installs all eleven `/loop-*` plays plus `/olli` and connects Loop, Fluint's MCP (`https://mcp.fluint.io/mcp`). The only step left to you is signing in to Fluint in the browser. Using the Claude app or a ChatGPT workspace instead? [INSTALL.md](INSTALL.md) has the click-through steps.
 
 ### Renamed skills
 
