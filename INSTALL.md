@@ -181,18 +181,20 @@ Grok Build reads Claude Code marketplaces, plugins, and MCP servers. If the user
 If the old `olli` or `loop` plugins (from before 1.3.0) are installed, remove them first, in Grok Build and in Claude Code, since Grok reads both. Each command may report that nothing is installed:
 
 ~~~bash
-grok plugin uninstall olli@fluint
-grok plugin uninstall loop@fluint
+grok plugin uninstall olli --confirm
+grok plugin uninstall loop --confirm
 claude plugin uninstall olli@fluint
 claude plugin uninstall loop@fluint
 ~~~
 
-Otherwise add the marketplace and install the plugin:
+Then, unless `fluint` is already available, add the marketplace and install the plugin. Grok installs by plugin name, and stops before installing unless `--trust` is given:
 
 ~~~bash
 grok plugin marketplace add Fluint-io/skills
-grok plugin install fluint@fluint
+grok plugin install fluint --trust
 ~~~
+
+If the Plugins tab then shows `fluint` as off, enable it there.
 
 If these commands are not recognized, open the Marketplace tab in Grok Build's TUI, add `Fluint-io/skills`, and install **fluint** there (or tell the user to).
 

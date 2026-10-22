@@ -52,7 +52,8 @@ For the Claude and ChatGPT apps, see the [install guide](https://github.com/Flui
 This plugin is instructions and reference material only. It runs no code, scripts, hooks, or local servers on your machine.
 
 - **Reads:** deal, meeting, email, and activity briefs from your Fluint workspace, through the Loop connector, using your own Fluint sign-in. Those briefs come from your connected CRM, call recordings, and email, and can include names, titles, and email addresses of the people on your deals.
-- **Sends:** your questions go to Loop to find the relevant briefs. Nothing is sent anywhere else, and the plugin stores nothing of its own. Drafts it writes stay in your conversation until you choose to send them.
+- **Sends:** your questions go to Loop to find the relevant briefs. The plugin makes no other external requests and stores nothing of its own.
+- **Your AI assistant** processes your questions and the briefs Loop returns, including any names and email addresses in them, to write its answers and drafts, under that assistant's own data terms. Drafts stay in your conversation until you choose to send them.
 
 ## Support
 
