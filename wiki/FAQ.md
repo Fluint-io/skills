@@ -26,7 +26,7 @@ Yes. Each skill is plain Markdown (a `SKILL.md` plus reference files). Fork the 
 
 ## How do updates work?
 
-If you turned on **Sync automatically** when adding the marketplace, installed skills update themselves when the repo changes. Otherwise, re-sync the marketplace in Customize → Plugins.
+If you turned on **Sync automatically** when adding the marketplace, installed skills update themselves when the repo changes. Otherwise, re-sync the marketplace in Settings → Customize → Plugins.
 
 ## Who built this?
 

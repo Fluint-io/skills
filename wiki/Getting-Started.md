@@ -7,7 +7,7 @@
 
 ## Install the marketplace
 
-1. In Claude, open **Customize → Plugins** (or **Settings → Capabilities → Plugins**).
+1. In Claude, open **Settings → Customize → Plugins** and click **Add**.
 2. Choose **Add marketplace** and paste the repository:
    ```
    Fluint-io/skills

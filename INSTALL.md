@@ -22,7 +22,7 @@ Reply with only the block for the app you are running in, copied as-is. Add noth
 ~~~text
 I can't install plugins from inside a chat, but it takes about a minute in settings:
 
-1. Customize → Plugins → Add marketplace → Fluint-io/skills. Install both "olli" and "loop", and turn on Sync automatically.
+1. Settings → Customize → Plugins → Add, and link the GitHub repo Fluint-io/skills. Then add both "Olli" and "Loop" from the Discover tab.
 2. Settings → Connectors → Add custom connector → https://mcp.fluint.io/mcp, then sign in with your Fluint account.
 
 Then start a new chat and ask for what you need, for example:
