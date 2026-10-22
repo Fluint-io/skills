@@ -1,0 +1,14 @@
+name: Grok packaging is current
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check grok/ and .grok-plugin/ match the Claude plugins
+        run: python3 bin/build-grok.py --check

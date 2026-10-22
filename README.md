@@ -1,6 +1,6 @@
 # Loop, in the AI you already use
 
-**Bring Olli and your Loop deals into Claude and ChatGPT.**
+**Bring Olli and your Loop deals into Claude, ChatGPT, and Grok.**
 
 You already know Olli: the sales agent in Fluint that writes like your best rep and thinks a few moves ahead on every deal. This brings Olli, and everything Loop knows about your deals, into the AI assistant you already use every day. Same voice. Same judgment. Same deals. No new tab, no copy-paste.
 
@@ -12,7 +12,7 @@ Built by [Nate Nasralla](https://www.fluint.io), author of *Selling With* and *B
 
 ## Get started
 
-Paste this into Claude Code or Codex:
+Paste this into Claude, ChatGPT, or Grok, in the app or the terminal:
 
 ```
 Install Olli and Loop by following https://app.fluint.io/install
@@ -25,7 +25,7 @@ It adds two plugins, **olli** (`/olli:chat`) and **loop** (the plays, `/loop:...
 /plugin install loop --marketplace Fluint-io/skills
 ```
 
-The paste-in line above also connects Loop for you. The only thing left to you is signing in to Fluint. Using the Claude app or ChatGPT instead? [INSTALL.md](INSTALL.md) has the click-through steps.
+The paste-in line above also connects Loop for you. The only thing left to you is signing in to Fluint. In the Claude or ChatGPT apps, it walks you through a few clicks in settings. In Grok, it saves Olli and the plays as Grok skills for you. [INSTALL.md](INSTALL.md) has every path.
 
 ---
 
