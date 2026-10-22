@@ -1,7 +1,7 @@
 ---
 name: plays
 description: >-
-  The front door to the Uncommon Sales Skills toolbox. Use this skill when a
+  The front door to the Loop plays. Use this skill when a
   seller describes a deal situation but has not named a specific play, or asks
   which play they need: "help me with this deal", "what should I do next on
   [account]", "I'm stuck, not sure what I need here", "coach me through this
@@ -16,7 +16,7 @@ description: >-
 
 ## What this does
 
-This is the router for the Uncommon Sales Skills toolbox. When a seller describes a deal but
+This is the router for the Loop plays. When a seller describes a deal but
 has not picked a play, it figures out where the deal actually is and points to the right skill.
 It exists so a rep never has to memorize ten skill names. Describe the situation, and this gets
 you to the move.

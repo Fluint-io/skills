@@ -1,4 +1,4 @@
-# Uncommon Sales Skills
+# Olli and Loop
 
 Ten Claude skills that run enterprise sales plays the way top reps actually sell: in the buyer's own language, sourced from your live deal data, and ending in a forwardable asset.
 

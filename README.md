@@ -15,7 +15,7 @@ Built by [Nate Nasralla](https://www.fluint.io), author of *Selling With* and *B
 Paste this into Claude Code or Codex:
 
 ```
-Install and set up Uncommon Sales Skills and the Loop MCP by following https://raw.githubusercontent.com/Fluint-io/skills/main/INSTALL.md
+Install Olli and Loop by following https://raw.githubusercontent.com/Fluint-io/skills/main/INSTALL.md
 ```
 
 It adds two plugins, **olli** (`/olli:chat`) and **loop** (the plays, `/loop:...`), and connects your Loop account. Prefer to install the plugins yourself? In Claude Code:

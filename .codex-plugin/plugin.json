@@ -1,7 +1,7 @@
 {
   "name": "loop",
   "version": "1.2.0+codex.20261022165329",
-  "description": "Ten sales-play skills that run enterprise deals the way top reps sell: in the buyer's own language, sourced from your live deal data, ending in a forwardable asset. Built on the Selling With and Brief & Brilliant frameworks.",
+  "description": "Eleven Loop sales plays that run enterprise deals the way top reps sell: in the buyer's own language, read from your Loop deals, each ending in a forwardable asset.",
   "author": {
     "name": "Fluint.io",
     "url": "https://www.fluint.io"
@@ -23,8 +23,8 @@
   ],
   "skills": "./plugins/loop/skills/",
   "interface": {
-    "displayName": "Uncommon Sales Skills",
-    "shortDescription": "Run enterprise sales plays in the buyer's own language",
+    "displayName": "Olli & Loop",
+    "shortDescription": "Olli and the Loop sales plays, on your live deals",
     "longDescription": "A full toolbox of enterprise sales plays: multithreading, account planning, call prep and follow-up, champion enablement, competitive displacement, deal advancement, QBR prep, managing up, and the one-page business case. Each pulls your live deal context (from Loop, Fluint's MCP), writes in the buyer's own language, applies a named framework, and ends in a forwardable deliverable. Start with the router if you are not sure which play you need.",
     "developerName": "Fluint.io",
     "category": "Productivity",
