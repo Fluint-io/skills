@@ -46,7 +46,7 @@ handoffs without losing its edge, it is ready.
 Note who resisted and on what. Some objections are spoken; the important ones often are
 not (the person who went quiet, the evaluator who asked three feasibility questions in a
 row). Mark the opening to engage each one. Do not try to resolve them here. If there is a
-real blocker, that is a job for the `loop:champion` skill, which owns the
+real blocker, that is a job for the `fluint:champion` skill, which owns the
 skeptic-conversion playbook. Hand it off.
 
 ## Forwardable email patterns

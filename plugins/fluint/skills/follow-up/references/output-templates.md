@@ -15,7 +15,7 @@
 Flag any missing element, e.g. [MISSING: no cost figure given].]
 
 ## Skeptics / objections that showed up
-- [who] pushed on [what]. Opening: [how to engage]. → deep work: loop:champion skill.
+- [who] pushed on [what]. Opening: [how to engage]. → deep work: fluint:champion skill.
 
 ## Follow-up drafts
 ### To [stakeholder 1] - [role]

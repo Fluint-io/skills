@@ -18,11 +18,10 @@ Paste this into Claude, ChatGPT, or Grok, in the app or the terminal:
 Install Olli and Loop by following https://app.fluint.io/install
 ```
 
-It adds two plugins, **fluint** (`/fluint:olli`) and **loop** (the plays, `/loop:...`), and connects your Loop account. Prefer to install the plugins yourself? In Claude Code:
+It adds one plugin, **fluint**: Olli (`/fluint:olli`) and the plays (`/fluint:...`), and connects your Loop account. Prefer to install the plugin yourself? In Claude Code:
 
 ```
 /plugin install fluint --marketplace Fluint-io/skills
-/plugin install loop --marketplace Fluint-io/skills
 ```
 
 The paste-in line above also connects Loop for you. The only thing left to you is signing in to Fluint. In the Claude or ChatGPT apps, it walks you through a few clicks in settings. In Grok, it saves Olli and the plays as Grok skills for you. [INSTALL.md](INSTALL.md) has every path.
@@ -48,17 +47,17 @@ Each play is one moment in a deal, built on a framework from *Selling With* and 
 
 | Play | What you walk away with |
 |------|-------------------------|
-| **/loop:plays** | Not sure what you need? Describe the deal and it points you to the right play. |
-| **/loop:call-prep** | A one-screen meeting brief: a point of view, planned discovery, the opening, and the ask. |
-| **/loop:follow-up** | A stakeholder map, the problem in the buyer's words, and a forwardable follow-up for each person on the call. |
-| **/loop:multithread** | The real buying committee, a value hypothesis for each person, and the outreach to reach them. |
-| **/loop:account-plan** | A point of view, the opportunities ranked by executive priority, and the first message to send. |
-| **/loop:champion** | The kit your champion carries into the meetings you are not in: soundbite, objection reframes, a one-pager. |
-| **/loop:displace** | A plan to unseat the incumbent by changing the criteria, not by winning a feature war. |
-| **/loop:business-case** | A one-page business case in the customer's words, scored, with the next move to strengthen it. |
-| **/loop:advance** | Why the deal stalled and the moves to restart it, or a mutual action plan to close it. |
-| **/loop:qbr** | A QBR that leads with their success, gets ahead of risk, and opens expansion without a pitch. |
-| **/loop:manage-up** | A forecast-call pack: an honest read of the territory, your big bets, and specific asks of leadership. |
+| **/fluint:plays** | Not sure what you need? Describe the deal and it points you to the right play. |
+| **/fluint:call-prep** | A one-screen meeting brief: a point of view, planned discovery, the opening, and the ask. |
+| **/fluint:follow-up** | A stakeholder map, the problem in the buyer's words, and a forwardable follow-up for each person on the call. |
+| **/fluint:multithread** | The real buying committee, a value hypothesis for each person, and the outreach to reach them. |
+| **/fluint:account-plan** | A point of view, the opportunities ranked by executive priority, and the first message to send. |
+| **/fluint:champion** | The kit your champion carries into the meetings you are not in: soundbite, objection reframes, a one-pager. |
+| **/fluint:displace** | A plan to unseat the incumbent by changing the criteria, not by winning a feature war. |
+| **/fluint:business-case** | A one-page business case in the customer's words, scored, with the next move to strengthen it. |
+| **/fluint:advance** | Why the deal stalled and the moves to restart it, or a mutual action plan to close it. |
+| **/fluint:qbr** | A QBR that leads with their success, gets ahead of risk, and opens expansion without a pitch. |
+| **/fluint:manage-up** | A forecast-call pack: an honest read of the territory, your big bets, and specific asks of leadership. |
 
 You do not have to remember any of these. Say what you are doing and the right one runs:
 
@@ -87,21 +86,21 @@ Loop customers running complex, multi-stakeholder, mid-market and enterprise dea
 
 ## Upgrading from an earlier version
 
-It is now two plugins: `fluint` for `/fluint:olli` and `loop` for the plays (`/loop:...`). Reinstall it once (the install line above handles this), then:
+It is now one plugin, `fluint`: `/fluint:olli` for Olli and `/fluint:...` for the plays. Reinstall it once (the install line above handles this), then:
 
 | Was (1.0) | Was (1.1) | Now |
 |-----|-----|-----|
-| sales-plays | `loop-plays` | `loop:plays` |
-| multithread | `loop-multithread` | `loop:multithread` |
-| account-planning | `loop-account-plan` | `loop:account-plan` |
-| call-prep | `loop-call-prep` | `loop:call-prep` |
-| call-follow-up | `loop-follow-up` | `loop:follow-up` |
-| champion-enablement | `loop-champion` | `loop:champion` |
-| competitive-displacement | `loop-displace` | `loop:displace` |
-| deal-advancement | `loop-advance` | `loop:advance` |
-| qbr-prep | `loop-qbr` | `loop:qbr` |
-| manage-up | `loop-manage-up` | `loop:manage-up` |
-| one-page-business-case | `loop-business-case` | `loop:business-case` |
+| sales-plays | `loop-plays` | `fluint:plays` |
+| multithread | `loop-multithread` | `fluint:multithread` |
+| account-planning | `loop-account-plan` | `fluint:account-plan` |
+| call-prep | `loop-call-prep` | `fluint:call-prep` |
+| call-follow-up | `loop-follow-up` | `fluint:follow-up` |
+| champion-enablement | `loop-champion` | `fluint:champion` |
+| competitive-displacement | `loop-displace` | `fluint:displace` |
+| deal-advancement | `loop-advance` | `fluint:advance` |
+| qbr-prep | `loop-qbr` | `fluint:qbr` |
+| manage-up | `loop-manage-up` | `fluint:manage-up` |
+| one-page-business-case | `loop-business-case` | `fluint:business-case` |
 
 ---
 

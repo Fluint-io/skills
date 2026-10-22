@@ -21,7 +21,7 @@
     "forecast",
     "fluint"
   ],
-  "skills": "./plugins/loop/skills/",
+  "skills": "./plugins/fluint/skills/",
   "interface": {
     "displayName": "Olli & Loop",
     "shortDescription": "Olli and the Loop sales plays, on your live deals",

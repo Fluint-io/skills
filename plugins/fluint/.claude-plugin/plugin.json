@@ -1,8 +1,8 @@
 {
   "name": "fluint",
-  "displayName": "Olli by Fluint",
+  "displayName": "Olli & Loop by Fluint",
   "version": "1.3.0",
-  "description": "Chat with Olli, Fluint's AI sales agent, inside your AI assistant: brief, calm, strategic, written in the buyer's words, and reading your deals from Loop.",
+  "description": "Olli, Fluint's AI sales agent, and eleven sales plays that run enterprise deals the way top reps sell: in the buyer's own language, read from your Loop deals, each ending in a forwardable asset. Built on the Selling With and Brief & Brilliant frameworks.",
   "author": {
     "name": "Fluint.io",
     "url": "https://www.fluint.io"
@@ -12,7 +12,15 @@
     "olli",
     "fluint",
     "loop",
-    "writing"
+    "writing",
+    "enterprise-selling",
+    "gtm",
+    "champions",
+    "business-case",
+    "discovery",
+    "multithreading",
+    "account-planning",
+    "forecast"
   ],
   "repository": "https://github.com/Fluint-io/skills",
   "license": "MIT"

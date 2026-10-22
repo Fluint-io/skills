@@ -105,7 +105,7 @@ what earns the next meeting.
 
 Note who pushed back and on what, spoken or unspoken, and where the opening is to engage
 them. Keep this light here. If a real blocker showed up, the deep work belongs in the
-`loop:champion` skill (Targeting the Skeptic). Hand it off with a one-line pointer.
+`fluint:champion` skill (Targeting the Skeptic). Hand it off with a one-line pointer.
 
 ## Step 5: Draft the forwardable follow-ups
 

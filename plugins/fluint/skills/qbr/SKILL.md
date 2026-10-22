@@ -27,7 +27,7 @@ expansion, or a status deck nobody remembers. This skill builds the first kind:
 4. Drafts an agenda that leads with their success and opens the door to more, without a pitch.
 
 This is a customer-facing review with the buyer, distinct from an internal forecast or deal
-review (for that, use the `loop:manage-up` skill). The deliverable is a QBR pack the seller can
+review (for that, use the `fluint:manage-up` skill). The deliverable is a QBR pack the seller can
 walk the customer through.
 
 ## Step 1: Lock the account and pull context

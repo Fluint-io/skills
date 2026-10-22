@@ -7,7 +7,7 @@ description: >-
   [account]", "I'm stuck, not sure what I need here", "coach me through this
   deal", "which play fits", "where is this deal and what's my move". It reads the
   situation, names the deal moment, and routes to the right skill in the toolbox.
-  Prefer a specific skill (loop:call-prep, loop:multithread, loop:advance, etc.) when
+  Prefer a specific skill (fluint:call-prep, fluint:multithread, fluint:advance, etc.) when
   the seller clearly names that need; use this router only when the need is
   ambiguous or the seller wants to be pointed to the right play.
 ---
@@ -30,7 +30,7 @@ Before routing, read the deal from Loop (`mcp.fluint.io`), the only data source:
 `find_briefs` naming it, then `get_brief` on its `deal_brief`. The `next_plays` section is what
 the seller should focus on next on this deal. Read the first entry's `label` and `narrative`,
 route to the play that moves it, and say so ("Loop's next play here is getting the economic
-buyer engaged, so start with loop:multithread"). If it holds only an `unsupported_reason`, or
+buyer engaged, so start with fluint:multithread"). If it holds only an `unsupported_reason`, or
 there is no deal yet, route from the table.
 
 If Loop is not connected, stop and tell the seller to connect it: in Claude Code run `/mcp` and
@@ -45,20 +45,20 @@ to get to next. Then match to the play.
 
 | The seller's situation | Route to |
 |------------------------|----------|
-| New account, or a live deal riding on one contact that needs more coverage | **loop:multithread** |
-| Needs a POV, an account plan, or wants to find expansion whitespace | **loop:account-plan** |
-| Has a call, demo, or discovery coming up and wants to walk in ready | **loop:call-prep** |
-| Just had a call or group demo and needs to follow up and lock the problem | **loop:follow-up** |
-| Needs to arm a champion to sell internally, or handle a skeptic or blocker | **loop:champion** |
-| Up against an incumbent or competitor and needs to change the game | **loop:displace** |
-| Ready to make the executive case for the deal | **loop:business-case** |
-| Deal has stalled, or needs a mutual action plan to drive to close | **loop:advance** |
-| Prepping a customer quarterly review or renewal conversation | **loop:qbr** |
-| Prepping a forecast call or deal review with their own leadership | **loop:manage-up** |
+| New account, or a live deal riding on one contact that needs more coverage | **fluint:multithread** |
+| Needs a POV, an account plan, or wants to find expansion whitespace | **fluint:account-plan** |
+| Has a call, demo, or discovery coming up and wants to walk in ready | **fluint:call-prep** |
+| Just had a call or group demo and needs to follow up and lock the problem | **fluint:follow-up** |
+| Needs to arm a champion to sell internally, or handle a skeptic or blocker | **fluint:champion** |
+| Up against an incumbent or competitor and needs to change the game | **fluint:displace** |
+| Ready to make the executive case for the deal | **fluint:business-case** |
+| Deal has stalled, or needs a mutual action plan to drive to close | **fluint:advance** |
+| Prepping a customer quarterly review or renewal conversation | **fluint:qbr** |
+| Prepping a forecast call or deal review with their own leadership | **fluint:manage-up** |
 
 When more than one fits, name the two most likely and let the seller pick. A deal often needs a
-sequence (for example: loop:multithread now, then loop:call-prep for the exec meeting, then
-loop:business-case). Say so, and start with the one that unblocks the rest.
+sequence (for example: fluint:multithread now, then fluint:call-prep for the exec meeting, then
+fluint:business-case). Say so, and start with the one that unblocks the rest.
 
 ## The through-line
 

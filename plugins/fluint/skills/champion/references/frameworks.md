@@ -107,7 +107,7 @@ Rules:
 - One page. People read in passes: headline, bold, bullets, then the rest.
 
 When the deal warrants the full version (a scored problem statement, KPI table, required
-investment), point the seller to the `loop:business-case` skill. This one-pager is the
+investment), point the seller to the `fluint:business-case` skill. This one-pager is the
 lightweight exec summary; that skill builds the complete case.
 
 ## Forwardable email patterns (when the champion sends a written note)

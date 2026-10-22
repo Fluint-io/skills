@@ -5,7 +5,7 @@ description: Install Olli and the Loop plays, and connect the Loop MCP.
 
 # Install Olli and Loop
 
-Olli, Fluint's AI sales agent (`/fluint:olli`), and eleven Loop sales plays (`/loop:*`), all running on your live deal data through Loop, Fluint's MCP.
+Olli, Fluint's AI sales agent (`/fluint:olli`), and eleven Loop sales plays (`/fluint:*`), all running on your live deal data through Loop, Fluint's MCP.
 
 https://github.com/Fluint-io/skills
 
@@ -22,7 +22,7 @@ If you are Claude or ChatGPT, reply with only the block for the app you are runn
 ~~~text
 I can't install plugins from inside a chat, but it takes about a minute in settings:
 
-1. Settings → Customize → Plugins → Add, and link the GitHub repo Fluint-io/skills. Then add both "Olli" and "Loop" from the Discover tab.
+1. Settings → Customize → Plugins → Add, and link the GitHub repo Fluint-io/skills. Then add "Olli & Loop by Fluint" from the Discover tab.
 2. Settings → Connectors → Add custom connector → https://mcp.fluint.io/mcp, then sign in with your Fluint account.
 
 Then start a new chat and ask for what you need, for example:
@@ -114,10 +114,11 @@ claude plugin uninstall loop@uncommon-sales-skills
 claude plugin marketplace remove uncommon-sales-skills
 ~~~
 
-Before 1.3.0, Olli was its own plugin named `olli` (`/olli:chat`). It is now the `fluint` plugin (`/fluint:olli`). Remove the old one; this may also report that nothing is installed:
+Before 1.3.0, Olli and the plays were two plugins, `olli` (`/olli:chat`) and `loop` (`/loop:...`). They are now one plugin, `fluint` (`/fluint:olli`, `/fluint:call-prep`, ...). Remove the old ones; each may report that nothing is installed:
 
 ~~~bash
 claude plugin uninstall olli@fluint
+claude plugin uninstall loop@fluint
 ~~~
 
 Then install:
@@ -125,17 +126,15 @@ Then install:
 ~~~bash
 claude plugin marketplace add Fluint-io/skills
 claude plugin install fluint@fluint
-claude plugin install loop@fluint
 ~~~
 
-Two plugins, two prefixes: `fluint` gives `/fluint:olli`, `loop` gives the plays (`/loop:call-prep`, `/loop:business-case`, ...). Install both; Olli runs the plays for deliverables.
+One plugin, one prefix: `/fluint:olli` for Olli and `/fluint:<play>` for the plays (`/fluint:call-prep`, `/fluint:business-case`, ...). Olli runs the plays for deliverables.
 
 Already on `fluint`? Update instead of reinstalling:
 
 ~~~bash
 claude plugin marketplace update fluint
 claude plugin update fluint@fluint
-claude plugin update loop@fluint
 ~~~
 
 ## 3. Connect Loop (Claude Code)
@@ -165,10 +164,10 @@ Olli and Loop are installed.
 
 Try one:
 1. /fluint:olli Talk a deal through with Olli.
-2. /loop:plays Help me figure out what this deal needs next.
-3. /loop:call-prep Prep me for my next call.
-4. /loop:advance Why is my biggest open deal stuck?
-5. /loop:business-case Build the business case for my top deal.
+2. /fluint:plays Help me figure out what this deal needs next.
+3. /fluint:call-prep Prep me for my next call.
+4. /fluint:advance Why is my biggest open deal stuck?
+5. /fluint:business-case Build the business case for my top deal.
 
 Or just describe the deal in your own words. The right play picks itself.
 ~~~
@@ -179,15 +178,14 @@ Or just describe the deal in your own words. The right play picks itself.
 
 Grok Build reads Claude Code marketplaces, plugins, and MCP servers. If the user already set up Olli and Loop in Claude Code on this machine, they may already be available: check Grok's Marketplace tab before installing anything.
 
-Otherwise add the marketplace and install both plugins:
+Otherwise add the marketplace and install the plugin:
 
 ~~~bash
 grok plugin marketplace add Fluint-io/skills
 grok plugin install fluint@fluint
-grok plugin install loop@fluint
 ~~~
 
-If these commands are not recognized, open the Marketplace tab in Grok Build's TUI, add `Fluint-io/skills`, and install **fluint** and **loop** there (or tell the user to).
+If these commands are not recognized, open the Marketplace tab in Grok Build's TUI, add `Fluint-io/skills`, and install **fluint** there (or tell the user to).
 
 For Loop, Grok Build uses MCP servers configured for Claude Code. If no Loop server is available, add `https://mcp.fluint.io/mcp` as a remote MCP server and have the user sign in with their Fluint account.
 

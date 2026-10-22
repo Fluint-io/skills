@@ -19,9 +19,10 @@ CONNECT = "add it at grok.com/connectors (New Connector, then Custom, URL `https
 
 
 def grokify(text):
-    text = re.sub(r"(?<![\w-])/fluint:olli\b", "the olli skill", text)
-    text = re.sub(r"\bloop:\*", "loop-*", text)
-    text = re.sub(r"\bloop:([a-z][a-z-]*)", r"loop-\1", text)
+    text = re.sub(r"(?<![\w-])/?fluint:olli\b", "the olli skill", text)
+    # Grok has no plugin namespaces; the plays keep their loop-* names there.
+    text = re.sub(r"\bfluint:\*", "loop-*", text)
+    text = re.sub(r"\bfluint:([a-z][a-z-]*)", r"loop-\1", text)
     text = re.sub(r"in\s+Claude Code run `/mcp` and\s+authenticate `loop`", "in Grok " + CONNECT, text)
     text = re.sub(r"\(`/mcp`, then\s+authenticate `loop`\)", "(at grok.com/connectors: New Connector, then Custom, URL `https://mcp.fluint.io/mcp`)", text)
     text = re.sub(r"https://raw\.githubusercontent\.com/Fluint-io/skills/main/INSTALL\.md", "https://app.fluint.io/install", text)
@@ -43,8 +44,8 @@ def bundle(skill_dir, name):
 def outputs():
     out = {".grok-plugin/marketplace.json": (ROOT / ".claude-plugin/marketplace.json").read_text()}
     out["grok/skills/olli.md"] = bundle(ROOT / "plugins/fluint/skills/olli", "olli")
-    for d in sorted((ROOT / "plugins/loop/skills").iterdir()):
-        if (d / "SKILL.md").exists():
+    for d in sorted((ROOT / "plugins/fluint/skills").iterdir()):
+        if d.name != "olli" and (d / "SKILL.md").exists():
             out[f"grok/skills/loop-{d.name}.md"] = bundle(d, f"loop-{d.name}")
     return out
 
