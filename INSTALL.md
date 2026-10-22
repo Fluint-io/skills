@@ -29,7 +29,7 @@ Then start a new chat and ask for what you need, for example:
 • "Why is my biggest open deal stuck?"
 • "Build the business case for my top deal."
 
-On a ChatGPT workspace, an admin imports https://github.com/Fluint-io/skills under Admin → Plugins → Import marketplace, and adds the same connector.
+On a ChatGPT workspace, an admin imports https://github.com/Fluint-io/skills under Admin → Plugins → Import marketplace, and adds the Loop connector, https://mcp.fluint.io/mcp.
 ~~~
 
 ---
