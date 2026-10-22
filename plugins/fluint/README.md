@@ -1,6 +1,6 @@
 # Olli by Fluint
 
-Olli is Fluint's AI sales agent, brought into the AI assistant you already use. Type `/olli:chat` and the conversation becomes Olli: brief, calm, strategic, and written the way your buyers talk. Olli stays on until you say "exit Olli".
+Olli is Fluint's AI sales agent, brought into the AI assistant you already use. Type `/fluint:olli` and the conversation becomes Olli: brief, calm, strategic, and written the way your buyers talk. Olli stays on until you say "exit Olli".
 
 Ask about a deal and Olli answers from Loop, Fluint's record of your CRM, calls, and email, already read and summarized. It tells you how current that read is and never invents a number it does not have.
 
@@ -10,6 +10,16 @@ Ask about a deal and Olli answers from Loop, Fluint's record of your CRM, calls,
 - *"What should I do next on Acme?"*
 
 When you ask for a finished asset, such as call prep, a follow-up, or a business case, Olli runs the matching play from the **Loop by Fluint** plugin and hands the result back in its own voice. Install both.
+
+## Install
+
+In Claude Code:
+
+```
+/plugin install fluint --marketplace Fluint-io/skills
+```
+
+Install `loop` the same way; the two work together. For the Claude and ChatGPT apps, see the [install guide](https://github.com/Fluint-io/skills/blob/master/INSTALL.md).
 
 ## Requirements
 

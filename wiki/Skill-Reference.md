@@ -92,7 +92,7 @@ All ten skills, grouped by deal stage. Each entry: what it does, when it fires, 
 
 ### olli
 **Does:** Switches the conversation to Olli, Fluint's AI sales agent, for the rest of the chat. Olli's behavior comes from the same behavioral prompt as Olli in the Fluint app: brief, calm, strategic, written in the buyer's words, one provocative thought per response. Olli reads deals from Loop and runs the matching play when you ask for a deliverable, keeping its own voice. Say "exit Olli" to go back.
-**Fires on:** "/olli:chat," "talk to Olli," "let me chat with Olli."
+**Fires on:** "/fluint:olli," "talk to Olli," "let me chat with Olli."
 
 ---
 

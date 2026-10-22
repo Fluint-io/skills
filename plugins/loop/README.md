@@ -18,6 +18,16 @@ Eleven sales plays that run enterprise deals the way top reps sell. Each play is
 
 You do not have to remember any of these. Say what you are doing, such as *"Prep me for my call with Acme tomorrow"*, and the right play runs. Pair it with **Olli by Fluint** to talk a deal through first.
 
+## Install
+
+In Claude Code:
+
+```
+/plugin install loop --marketplace Fluint-io/skills
+```
+
+Install `fluint` the same way; the two work together. For the Claude and ChatGPT apps, see the [install guide](https://github.com/Fluint-io/skills/blob/master/INSTALL.md).
+
 ## Requirements
 
 - A Fluint account.

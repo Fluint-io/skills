@@ -5,7 +5,7 @@ description: Install Olli and the Loop plays, and connect the Loop MCP.
 
 # Install Olli and Loop
 
-Olli, Fluint's AI sales agent (`/olli:chat`), and eleven Loop sales plays (`/loop:*`), all running on your live deal data through Loop, Fluint's MCP.
+Olli, Fluint's AI sales agent (`/fluint:olli`), and eleven Loop sales plays (`/loop:*`), all running on your live deal data through Loop, Fluint's MCP.
 
 https://github.com/Fluint-io/skills
 
@@ -114,21 +114,27 @@ claude plugin uninstall loop@uncommon-sales-skills
 claude plugin marketplace remove uncommon-sales-skills
 ~~~
 
+Before 1.3.0, Olli was its own plugin named `olli` (`/olli:chat`). It is now the `fluint` plugin (`/fluint:olli`). Remove the old one; this may also report that nothing is installed:
+
+~~~bash
+claude plugin uninstall olli@fluint
+~~~
+
 Then install:
 
 ~~~bash
 claude plugin marketplace add Fluint-io/skills
-claude plugin install olli@fluint
+claude plugin install fluint@fluint
 claude plugin install loop@fluint
 ~~~
 
-Two plugins, two prefixes: `olli` gives `/olli:chat`, `loop` gives the plays (`/loop:call-prep`, `/loop:business-case`, ...). Install both; Olli runs the plays for deliverables.
+Two plugins, two prefixes: `fluint` gives `/fluint:olli`, `loop` gives the plays (`/loop:call-prep`, `/loop:business-case`, ...). Install both; Olli runs the plays for deliverables.
 
 Already on `fluint`? Update instead of reinstalling:
 
 ~~~bash
 claude plugin marketplace update fluint
-claude plugin update olli@fluint
+claude plugin update fluint@fluint
 claude plugin update loop@fluint
 ~~~
 
@@ -158,7 +164,7 @@ New skills load in a new session. Tell the user to start one (or restart Claude 
 Olli and Loop are installed.
 
 Try one:
-1. /olli:chat Talk a deal through with Olli.
+1. /fluint:olli Talk a deal through with Olli.
 2. /loop:plays Help me figure out what this deal needs next.
 3. /loop:call-prep Prep me for my next call.
 4. /loop:advance Why is my biggest open deal stuck?
@@ -177,11 +183,11 @@ Otherwise add the marketplace and install both plugins:
 
 ~~~bash
 grok plugin marketplace add Fluint-io/skills
-grok plugin install olli@fluint
+grok plugin install fluint@fluint
 grok plugin install loop@fluint
 ~~~
 
-If these commands are not recognized, open the Marketplace tab in Grok Build's TUI, add `Fluint-io/skills`, and install **olli** and **loop** there (or tell the user to).
+If these commands are not recognized, open the Marketplace tab in Grok Build's TUI, add `Fluint-io/skills`, and install **fluint** and **loop** there (or tell the user to).
 
 For Loop, Grok Build uses MCP servers configured for Claude Code. If no Loop server is available, add `https://mcp.fluint.io/mcp` as a remote MCP server and have the user sign in with their Fluint account.
 

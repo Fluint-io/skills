@@ -19,7 +19,7 @@ CONNECT = "add it at grok.com/connectors (New Connector, then Custom, URL `https
 
 
 def grokify(text):
-    text = re.sub(r"(?<![\w-])/olli:chat\b", "the olli skill", text)
+    text = re.sub(r"(?<![\w-])/fluint:olli\b", "the olli skill", text)
     text = re.sub(r"\bloop:\*", "loop-*", text)
     text = re.sub(r"\bloop:([a-z][a-z-]*)", r"loop-\1", text)
     text = re.sub(r"in\s+Claude Code run `/mcp` and\s+authenticate `loop`", "in Grok " + CONNECT, text)
@@ -42,7 +42,7 @@ def bundle(skill_dir, name):
 
 def outputs():
     out = {".grok-plugin/marketplace.json": (ROOT / ".claude-plugin/marketplace.json").read_text()}
-    out["grok/skills/olli.md"] = bundle(ROOT / "plugins/olli/skills/chat", "olli")
+    out["grok/skills/olli.md"] = bundle(ROOT / "plugins/fluint/skills/olli", "olli")
     for d in sorted((ROOT / "plugins/loop/skills").iterdir()):
         if (d / "SKILL.md").exists():
             out[f"grok/skills/loop-{d.name}.md"] = bundle(d, f"loop-{d.name}")

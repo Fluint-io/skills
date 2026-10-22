@@ -18,10 +18,10 @@ Paste this into Claude, ChatGPT, or Grok, in the app or the terminal:
 Install Olli and Loop by following https://app.fluint.io/install
 ```
 
-It adds two plugins, **olli** (`/olli:chat`) and **loop** (the plays, `/loop:...`), and connects your Loop account. Prefer to install the plugins yourself? In Claude Code:
+It adds two plugins, **fluint** (`/fluint:olli`) and **loop** (the plays, `/loop:...`), and connects your Loop account. Prefer to install the plugins yourself? In Claude Code:
 
 ```
-/plugin install olli --marketplace Fluint-io/skills
+/plugin install fluint --marketplace Fluint-io/skills
 /plugin install loop --marketplace Fluint-io/skills
 ```
 
@@ -31,7 +31,7 @@ The paste-in line above also connects Loop for you. The only thing left to you i
 
 ## Talk to Olli
 
-Type `/olli:chat` and the conversation becomes Olli: brief, calm, strategic, and written the way your buyers talk. Olli stays on until you say "exit Olli".
+Type `/fluint:olli` and the conversation becomes Olli: brief, calm, strategic, and written the way your buyers talk. Olli stays on until you say "exit Olli".
 
 - *"What's going on with the Globex renewal?"*
 - *"Who have we actually talked to at Initech?"*
@@ -87,7 +87,7 @@ Loop customers running complex, multi-stakeholder, mid-market and enterprise dea
 
 ## Upgrading from an earlier version
 
-It is now two plugins: `olli` for `/olli:chat` and `loop` for the plays (`/loop:...`). Reinstall it once (the install line above handles this), then:
+It is now two plugins: `fluint` for `/fluint:olli` and `loop` for the plays (`/loop:...`). Reinstall it once (the install line above handles this), then:
 
 | Was (1.0) | Was (1.1) | Now |
 |-----|-----|-----|
