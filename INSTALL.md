@@ -104,7 +104,7 @@ I can't install plugins from inside a chat, but it takes about a minute in setti
 2. Settings → Connectors → Add custom connector → https://mcp.fluint.io/mcp, then sign in with your Fluint account.
 
 Then start a new chat and ask for what you need, for example:
-• "Talk me through the Acme deal like Olli would."
+• "Let me talk to Olli about the Acme deal."
 • "Prep me for my next call."
 • "Why is my biggest open deal stuck?"
 • "Build the business case for my top deal."
