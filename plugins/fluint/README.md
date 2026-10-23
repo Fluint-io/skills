@@ -45,7 +45,7 @@ For the Claude and ChatGPT apps, see the [install guide](https://github.com/Flui
 ## Requirements
 
 - A Fluint account.
-- The Loop connector, `https://mcp.fluint.io/mcp`, connected and signed in with your Fluint account. Olli and the plays have no other data source and stop if Loop is not connected.
+- The Loop connector, `https://mcp.fluint.io/mcp`. This plugin adds it for you as `loop`; sign in to it once with your Fluint account (in Claude Code, run `/mcp`, choose `loop`, then Authenticate). If you already added the Loop connector yourself, it is the same server. Olli and the plays have no other data source and stop if Loop is not connected.
 
 ## What it reads and sends
 

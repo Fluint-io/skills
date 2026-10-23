@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "loop": {
+      "type": "http",
+      "url": "https://mcp.fluint.io/mcp"
+    }
+  }
+}
