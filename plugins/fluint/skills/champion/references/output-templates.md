@@ -60,7 +60,7 @@ Recommendation
 
 Rules for the one-pager: no logo, no vendor branding, no product feature list. It reads as if
 someone inside the account wrote it. Camouflage, not a billboard. Champion's name on it. For
-the full scored version, use the `loop:business-case` skill.
+the full scored version, use the `fluint:business-case` skill.
 
 ## Reminders
 

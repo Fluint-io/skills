@@ -12,7 +12,7 @@
    ```
    Fluint-io/skills
    ```
-3. On the **Discover** tab, add both **Olli** and **Loop**.
+3. On the **Discover** tab, add **Olli & Loop by Fluint**.
 
 ### Single-skill option
 
