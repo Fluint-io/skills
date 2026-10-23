@@ -7,6 +7,11 @@
     "name": "Fluint.io",
     "url": "https://www.fluint.io"
   },
+  "homepage": "https://www.fluint.io",
+  "documentationUrl": "https://github.com/Fluint-io/skills#readme",
+  "supportUrl": "https://help.fluint.io/en/",
+  "privacyPolicyUrl": "https://www.fluint.io/privacy-policy",
+  "termsOfServiceUrl": "https://www.fluint.io/terms-of-service",
   "keywords": [
     "sales",
     "olli",
